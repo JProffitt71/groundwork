@@ -8,13 +8,10 @@
 @import "settings";         // customizable settings
 
 
-
 //-------- REQUIRED COMPONENTS: --------//
 @import "core/all-core";    // constants, defaults, mixins, breakpoints, color palette
 @import "base/all-base";    // reset, globals, grid, flexbox, helpers
 @import "icons/all-icons";  // font awesome icons
-
-
 
 //-------- OPTIONAL COMPONENTS: --------//
 
@@ -36,6 +33,14 @@
 // @import "ui/tables";
 // @import "ui/tabs";
 
+// Responsive Components
+@import "responsive/all-responsive";
+// individual responsive modules
+// @import "responsive/mobile";
+// @import "responsive/small-tablet";
+// @import "responsive/large-tablet";
+// @import "responsive/desktop";
+
 // Animations
 @import "anim/all-animations";
 // individual animation modules
@@ -55,12 +60,3 @@
 // @import "anim/wiggle";
 // @import "anim/wobble";
 // @import "anim/slide";
-
-// Responsive Components
-@import "responsive/all-responsive";
-// individual responsive modules
-// @import "responsive/helpers-responsive";
-// @import "responsive/desktop";
-// @import "responsive/ipad";
-// @import "responsive/small-tablet";
-// @import "responsive/mobile";

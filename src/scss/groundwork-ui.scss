@@ -8,13 +8,9 @@
 @import "settings";         // customizable settings
 
 
-
 //-------- REQUIRED COMPONENTS: --------//
 @import "core/all-core";    // constants, defaults, mixins, breakpoints, color palette
 @import "base/helpers";
-$grid-classes: false !default;
-$grid-adapter-classes: false !default;
-$responsive: false !default;
 @import "base/grid";
 @import "icons/font-awesome/variables";
 @import "icons/font-awesome/path";
