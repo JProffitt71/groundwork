@@ -5,71 +5,6 @@
 
 @import "webfonts";
 
-// typography defaults
-$type-tags:                 true !default;
-$type-elements:             "h1" "h2" "h3" "h4" "h5" "h6" "p"
-                            "ul" "ol" "dl"
-                            "q" "blockquote" "cite"
-                            "small" "big"
-                            "b" "strong"
-                            "em"
-                            "sup" "sub"
-                            "del" "strike"
-                            "code" "pre" !default;
-$type-colors:               true !default;
-$type-classes:              false !default;
-$type-classnames:           "h1" "h2" "h3" "h4" "h5" "h6" "p"
-                            "ul" "ol" "dl"
-                            "q" "blockquote" "cite"
-                            "small" "big" "large"
-                            "b" "bold" "strong"
-                            "em" "italic"
-                            "sup" "sub"
-                            "del" "strike"
-                            "code" "pre"
-                            "invalid" "valid"
-                            "unstyled" !default;
-$quote-color:               $font-color !default;
-$quote-background:          $border-color !default;
-$quote-font:                "source-sans-pro" !default;
-$styled-lists:              true !default;
-$multi-column-classes:      true !default;
-$multi-column-names:        "one-column" "two-column" "three-column" "four-column" "five-column" !default;
-$info-color:                #3a87ad !default;
-$alert-text:                #ffffff !default;
-$error-color:               #b94a48 !default;
-$warning-color:             #FF971E !default;
-$success-color:             #468847 !default;
-$question-color:            #9855b4 !default;
-$ui-states:                 "info"  "alert" "warning" "error" "success" "question" !default;
-$ui-icons:                  "\f05a" "\f06a" "\f071"   "\f057" "\f058"   "\f059" !default;
-$ui-states-colors:          $info-color $alert-color $warning-color $error-color $success-color $question-color !default;
-$ui-states-backgrounds:     $info-background $alert-background $warning-background $error-background $success-background $question-background !default;
-$ui-states-color-classes:   true !default;
-$font-size:                 14px !default;
-$line-height:               1.5 !default;
-$heading-line-height:       1.3 !default;
-$headings-font:             nth($web-font-names, 1) !default;
-$links-underlined:          false !default;
-$links-active-underlined:   true !default;
-// shared defaults
-$background-color:          #ffffff !default;
-$font-family:               Helvetica, Arial, Geneva, sans-serif !default;
-$font-color:                #2b2b2d !default;
-$link-color:                #489AC1 !default;
-$link-active:               #198D98 !default;
-$code-text:                 #555555 !default;
-$code-background:           #ffffff !default;
-$selection-color:           $link-color !default;
-$selection-text:            #ffffff !default;
-$border-thickness:          1px !default;
-$border-style:              solid !default;
-$border-color:              #dddddd !default;
-$gutter:                    10px !default;
-$default-radius:            4px !default;
-$placeholderText-fallback:  true !default;
-
-
 %document {
   font-family: $font-family;
   font-size: $font-size;
@@ -135,7 +70,7 @@ $placeholderText-fallback:  true !default;
 }
 
 %p, %ul, %ol, %dl {
-  margin-bottom: 10px;
+  @include _gap-bottom();
   font-weight: normal;
   line-height: 1.5;
 }
@@ -289,6 +224,7 @@ $placeholderText-fallback:  true !default;
   font-size: 1.15em;
   background: $quote-background;
   @include border-radius($default-radius);
+  @include _gap-bottom();
   &:before {
     content: "\201C"; // left quotation mark
     color: darken($quote-background, 20%);
@@ -333,6 +269,7 @@ $placeholderText-fallback:  true !default;
   white-space: pre;
   max-width: 100%;
   overflow: auto;
+  @include _gap-bottom();
 }
 
 %code {
@@ -345,6 +282,7 @@ $placeholderText-fallback:  true !default;
   padding: 0 ($gutter / 2);
   &.block {
     padding: ($gutter / 2) $gutter;
+    @include _gap-bottom();
   }
 }
 
@@ -354,14 +292,6 @@ $placeholderText-fallback:  true !default;
 %error, %invalid  { color: $error-color; }
 %success, %valid  { color: $success-color; }
 %question         { color: $question-color; }
-
-// responsive headings
-.js {
-  .responsive:not(table) {
-    @extend %truncate;
-    @include transition(font 0.25s);
-  }
-}
 
 @if $type-tags {
   body {
@@ -398,6 +328,16 @@ $placeholderText-fallback:  true !default;
   @for $i from 1 through length($type-elements) {
     #{nth($type-elements, $i)} {
       @extend %#{nth($type-elements, $i)};
+    }
+  }
+}
+
+@if $responsive-headings {
+  // responsive headings
+  .js {
+    .responsive:not(table) {
+      @extend %truncate;
+      @include transition(font 0.25s);
     }
   }
 }

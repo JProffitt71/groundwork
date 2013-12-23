@@ -3,27 +3,6 @@
 //          Last Updated:2013-9-6
 // =============================================
 
-$button-tags:         true !default;
-$button-classes:      true !default;
-$button-modifiers:    "small" "large" "on" "active" "square" "round" "block" !default;
-$button-states:       "on" "active" "selected" "pressed" "disabled" "info" "alert" "warning" "error" "success" "question" !default;
-$aria-selectors:      true !default;
-$aria-states:         "selected" "pressed" "disabled" "readonly" "invalid" !default;
-$button-color:        lighten(gray, 32.5%) !default;
-$button-text:         darken(gray, 15%) !default;
-$button-border-color: lighten(gray, 27.5%) !default;
-$button-active:       lighten(gray, 27.5%) !default;
-$button-active-text:  darken(gray, 12%) !default;
-// shared defaults
-$border-thickness:    1px !default;
-$border-style:        solid !default;
-$border-color:        #dddddd !default;
-$default-radius:      4px !default;
-$disabled-color:      #808080 !default;
-$disabled-text:       #dddddd !default;
-$disabled-background: lighten($disabled-color, 20%) !default;
-$disabled-border:     darken($disabled-color, 10%) !default;
-
 
 %button {
   @extend %inline-block;

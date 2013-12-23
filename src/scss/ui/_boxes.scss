@@ -3,12 +3,6 @@
 //          Last Updated:2013-8-24
 // =============================================
 
-$ui-classes:      true !default;
-$ui-states:       "info"  "alert" "warning" "error" "success" "question" !default;
-$ui-icons:        "\f05a" "\f06a" "\f071"   "\f057" "\f058"   "\f059" !default;
-$radius-helpers:  "square" "round" !default;
-$size-helpers:    "small" "medium" "large" !default;
-$default-radius:  4px !default;
 
 %box {
   @extend %relative, %padded;

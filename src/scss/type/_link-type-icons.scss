@@ -3,9 +3,6 @@
 //          Last Updated:2013-9-5
 // =============================================
 
-
-$link-type-icons:           true !default;
-$link-type-colors:          false !default;
 $modifier-exclusions:       "";
 @for $i from 1 through length($modifier-name) {
   $modifier-exclusions: $modifier-exclusions + ":not(." + nth($modifier-name, $i) + ")";

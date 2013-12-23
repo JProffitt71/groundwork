@@ -1,21 +1,7 @@
 // =============================================
 //                Navigation
-//          Last Updated:2013-8-21
+//          Last Updated:2013-12-19
 // =============================================
-
-$navigation-classes:  true !default;
-$navigation-states:   "on" "active" !default;
-$nav-color:           lighten(gray, 32.5%) !default;
-$nav-text:            darken(gray, 15%) !default;
-$nav-border-color:    lighten(gray, 27.5%) !default;
-$nav-active:          lighten(gray, 27.5%) !default;
-$nav-active-text:     darken(gray, 12%) !default;
-// shared defaults
-$aria-selectors:      true !default;
-$border-thickness:    1px !default;
-$border-style:        solid !default;
-$border-color:        #dddddd !default;
-$default-radius:      4px !default;
 
 
 %navigation {
@@ -25,22 +11,47 @@ $default-radius:      4px !default;
   color: $nav-text;
   border: $border-thickness $border-style $nav-border-color;
   @include rounded($default-radius);
+
+  &:before {
+    position: absolute;
+    float: left;
+    display: inline-block;
+    content: attr(title);
+    font-weight: bold;
+    line-height: 1.5;
+    padding: 0.25em 0.5em;
+  }
 }
 
 %navigation-list {
   @extend %unstyled, %zero, %clear;
+  display: none;
+
+  &[aria-expanded="true"] {
+    display: block;
+  }
 }
 
 %navigation-list-item {
-  @extend %block, %relative, %pull-left;
-}
+  @extend %block, %relative;
 
-%vertical-navigation-list-item {
-  @extend %pull-none;
+  %navigation-list-item {
+    %navigation-link {
+      text-indent: $gutter;
+    }
+    %navigation-list-item {
+      %navigation-link {
+        text-indent: ($gutter*2);
+      }
+    }
+  }
 }
 
 %navigation-link {
-  @extend %inline-block, %align-center, %strong;
+  @extend %inline-block, %strong, %align-left;
+  display: block;
+  width: 100%;
+  height: auto;
   background: $nav-color;
   color: $nav-text;
   cursor: pointer;
@@ -48,29 +59,14 @@ $default-radius:      4px !default;
   text-decoration: none;
   cursor: pointer;
   line-height: 1.5;
+  white-space: nowrap;
   border: 0;
   border-top: $border-thickness $border-style $nav-border-color;
   @include rounded(0);
   &:hover, &:focus {
     @extend %navigation-link-active;
   }
-}
 
-%vertical-navigation-link {
-  display: block;
-  width: 100%;
-  text-align: left;
-}
-
-%hamburger-button {
-  @extend %pull-right;
-  display: none;
-  background: none;
-  color: $nav-active-text;
-  border: 0;
-  &:hover, &:focus {
-    background: none !important;
-  }
 }
 
 %navigation-link-on, %navigation-link-active {
@@ -81,20 +77,34 @@ $default-radius:      4px !default;
 
 %navigation-link-disabled  { @include state(disabled,normal,desaturate($nav-color,20%)); }
 
-%navigation-menu {
-  display: none;
-  position: absolute;
-  z-index: 9;
-  min-width: 100%;
-  border: $border-thickness $border-style $nav-border-color;
-  font-size: 0.9em;
-  @include rounded(0 0 $default-radius $default-radius);
+%hamburger-button {
+  @extend %pull-right;
+  display: inline-block;
+  width: auto;
+  background: none;
+  color: $nav-active-text;
+  border: 0;
+  &:hover, &:focus {
+    background: none !important;
+  }
+  &:before {
+    @include icon-FontAwesome();
+    content: $icon-list;
+  }
+  &[aria-expanded="true"] {
+    &:before {
+      content: $icon-collapse-top;
+    }
+  }
+
 }
 
-%vertical-navigation-menu {
-  position: static;
-  border: 0;
-  @include rounded(0 !important);
+%navigation-menu {
+  display: none;
+  z-index: 9;
+  min-width: 100%;
+  font-size: 0.9em;
+  @include rounded(0 0 $default-radius $default-radius);
 }
 
 @for $i from 1 through length($modifier-name) {
@@ -163,77 +173,14 @@ $default-radius:      4px !default;
         }
         a, button {
           @extend %navigation-link-#{nth($modifier-name, $i)};
+          color: nth($modifier-text, $i);
         }
       }
     }
 
-    &.vertical {
-      > ul {
-        > li:first-child {
-          > a, > button {
-            border-top-width: 0;
-          }
-        }
-        > li {
-          > a, > button {
-            border-top-width: $border-thickness;
-          }
-        }
-      }
-      li {
-        li {
-          a, button {
-            text-indent: $gutter;
-          }
-          li {
-            a, button {
-              text-indent: ($gutter * 2);
-            }
-          }
-        }
-        @extend %vertical-navigation-list-item;
-        &[role="menu"] {
-          > a, > button {
-            &:after {
-              content: $icon-caret-down;
-            }
-          }
-          &[aria-pressed="true"] {
-            > a, > button {
-              &:after {
-                content: $icon-caret-up;
-              }
-            }
-          }
-        }
-        ul {
-          @extend %vertical-navigation-menu;
-          li {
-          }
-        }
-        li {
-          @include rounded(0 0 0 0);
-          &:last-child {
-            a, button {
-              @include rounded(0 0 0 0);
-            }
-          }
-          ul {
-            li {
-              &:first-child {
-                a, button {
-                  @include rounded(0 0 0 0);
-                }
-              }
-            }
-          }
-        }
-      }
-      a, button:not(.hamburger) {
-        @extend %vertical-navigation-link;
-      }
+    > ul {
+      border: none;
     }
-
     ul {
       @extend %navigation-list;
     }
@@ -244,7 +191,6 @@ $default-radius:      4px !default;
       &[role="menu"] {
         > a, > button {
           &:after {
-            @extend %pull-right;
             margin-left: 0.5em;
             content: $icon-caret-down;
             font-family: FontAwesome;
@@ -252,6 +198,14 @@ $default-radius:      4px !default;
             font-style: normal;
             text-decoration: inherit;
             -webkit-font-smoothing: antialiased;
+            line-height: 1em;
+          }
+        }
+        &[aria-pressed="true"] {
+          > a, > button {
+            &:after {
+              content: $icon-caret-up;
+            }
           }
         }
         &[aria-expanded="true"] {
@@ -266,7 +220,6 @@ $default-radius:      4px !default;
         > li {
           &:first-child {
             > a, > button {
-              border-top-width: 0;
             }
           }
         }
@@ -285,16 +238,8 @@ $default-radius:      4px !default;
           }
         }
 
-        &[role="menu"] {
-          > a, > button {
-            &:after {
-              content: $icon-caret-right;
-            }
-          }
-        }
-
         ul {
-          top: 0;
+          top: -#{$border-thickness};
           left: 100%;
           min-width: none;
           font-size: 1em;
@@ -319,23 +264,11 @@ $default-radius:      4px !default;
       display: block;
     }
 
-    a, a:visited, button {
+    a, button {
       @extend %navigation-link;
       @for $i from 1 through length($navigation-states) {
         &.#{nth($navigation-states, $i)} {
           @extend %navigation-link-#{nth($navigation-states, $i)};
-        }
-      }
-    }
-    > ul {
-      > li {
-        > a, > button {
-          border-top-width: 0;
-        }
-        &:first-child {
-          > a, > button {
-            border-top-width: 0;
-          }
         }
       }
     }

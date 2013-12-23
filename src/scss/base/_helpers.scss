@@ -3,43 +3,6 @@
 //          Last Updated:2013-8-16
 // =============================================
 
-$positioning-classes: true !default;
-
-$spacer-classes:      true !default;
-$spacer-helpers:      "padded" "pad-top" "pad-right" "pad-bottom" "pad-left"
-                      "gapped" "gap-top" "gap-right" "gap-bottom" "gap-left"
-                      "offset" "offset-top" "offset-right" "offset-bottom" "offset-left" !default;
-
-$spacer-mod-classes:  true !default;
-$spacer-modifiers:    "half" "double" "triple" !default;
-
-$size-classes:        true !default;
-$size-helpers:        "small" "medium" "large" !default;
-
-$layout-classes:      true !default;
-$layout-helpers:      "inline" "inline-block" "block"
-                      "hidden"
-                      "zero"
-                      "pull-right" "pull-left" "pull-none" "clear"
-                      "center" !default;
-
-$typography-classes:  true !default;
-$typography-helpers:  "align-top" "align-right" "align-bottom" "align-left" "align-center" "justify"
-                      "truncate" "unstyled" !default;
-
-$border-classes:      true !default;
-$border-helpers:      "bordered" "border-right" "border-left" "border-top" "border-bottom" !default;
-
-$radius-classes:      true !default;
-$radius-helpers:      "square" "round" !default;
-
-$rotation-classes:    true !default;
-$rotation-helpers:    "rotate-90" "rotate-90-ctr" "rotate-180" "rotate-180-ctr" "rotate-270" "rotate-270-ctr" "rotate-360" "rotate-360-ctr" !default;
-
-$transition-classes:  true !default;
-$gutter:              10px !default;
-
-
 ///////////////////////
 //       mixins      //
 ///////////////////////

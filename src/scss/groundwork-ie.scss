@@ -1,22 +1,54 @@
 // ============================================
-//             Legacy IE Support
-//          Last Updated:2013-8-16
+//        Legacy IE Support (IE lt 9)
+//          Last Updated:2013-12-22
 // ============================================
 
 
-$container-width: 1200px !default;
+//---------- CUSTOM SETTINGS: ----------//
+@import "settings";         // customizable settings
 
-@import "settings";
-@import "core/all-core";
+$fix-mqs: 64em !default;
 
 
+//-------- REQUIRED COMPONENTS: --------//
+@import "core/all-core";    // constants, defaults, mixins, breakpoints, color palette
+@import "base/all-base";    // reset, globals, grid, flexbox, helpers
+@import "icons/all-icons";  // font awesome icons
+
+
+//-------- OPTIONAL COMPONENTS: --------//
+
+// Typography
+@import "type/all-type";
+// individual typography modules
+// @import "type/link-type-icons";
+// @import "type/typography";
+// @import "type/webfonts";
+
+// UI
+@import "ui/all-ui";
+// individual UI modules
+// @import "ui/boxes";
+// @import "ui/buttons";
+// @import "ui/forms";
+// @import "ui/messages";
+// @import "ui/nav";
+// @import "ui/tables";
+// @import "ui/tabs";
+
+// Responsive Components
+@import "responsive/all-responsive";
+// individual responsive modules
+// @import "responsive/helpers-responsive";
+// @import "responsive/desktop";
+// @import "responsive/ipad";
+// @import "responsive/small-tablet";
+// @import "responsive/mobile";
+
+
+//------------- IE Fixes: --------------//
 
 html {
-  &.ie {
-    .hide-on-desktop {
-      display: none;
-    }
-  }
   &.lt-ie9 {
     min-width: $container-width !important;
     body {
@@ -87,3 +119,4 @@ html {
     }
   }
 }
+

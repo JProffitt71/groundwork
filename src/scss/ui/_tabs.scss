@@ -3,22 +3,6 @@
 //          Last Updated:2013-8-26
 // =============================================
 
-$tab-classes:         true !default;
-$tab-states:          "active" !default;
-$aria-selectors:      true !default;
-$tab-color:           lighten(gray, 32.5%) !default;
-$tab-text:            darken(gray, 15%) !default;
-$tab-border-color:    lighten(gray, 22.5%) !default;
-$tab-active:          lighten(gray, 27.5%) !default;
-$tab-active-text:     darken(gray, 12%) !default;
-$tabpanel-background: #ffffff !default;
-$tabpanel-text:       #2b2b2d !default;
-// shared defaults
-$border-thickness:    1px !default;
-$border-style:        solid !default;
-$border-color:        #dddddd !default;
-$default-radius:      4px !default;
-
 
 %tablist {
   @extend %unstyled;

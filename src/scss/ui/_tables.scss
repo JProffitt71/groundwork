@@ -3,10 +3,6 @@
 //          Last Updated:2013-8-16
 // =============================================
 
-$table-tags:    true !default;
-$table-classes: true !default;
-$tables-states: "info" "alert" "warning" "error" "success" "question" !default;
-
 
 %table {
   border: 1px solid $border-color;

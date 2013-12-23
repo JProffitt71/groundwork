@@ -3,20 +3,6 @@
 //          Last Updated:2013-6-25
 // =============================================
 
-$reset:           true !default;
-$reset-elements:  "html" "body"
-                  "div" "span" "header" "footer" "aside" "nav" "menu" "main" "section" "article" "details"
-                  "h1" "h2" "h3" "h4" "h5" "h6" "p"
-                  "ol" "ul" "li" "dl" "dt" "dd"
-                  "em" "small" "big" "strong" "b" "u" "i" "sub" "sup" "del" "strike"
-                  "q" "blockquote" "cite"
-                  "time" "address"
-                  "code" "pre"
-                  "a" "img" "center" "hr"
-                  "form" "fieldset" "legend" "label" "input" "textarea" "button"
-                  "table" "caption" "tbody" "thead" "tfoot" "tr" "th" "td"
-                  "iframe" "object" "canvas" "audio" "video" "embed" !default;
-
 
 %everything {
   @include box-sizing(border-box);

@@ -3,34 +3,6 @@
 //          Last Updated:2013-8-21
 // =============================================
 
-$form-tags:       true !default;
-$form-classes:    false !default;
-$form-elements:   "fieldset" "legend" "label" "input" "textarea" !default;
-$default-radius:  4px !default;
-
-$fieldset-color:  darken(white, 2%) !default;
-
-$border-thickness:    1px !default;
-$border-style:        solid !default;
-$border-color:        #dddddd !default;
-
-$error-color:         #b94a48 !default;
-$error-text:          #ffffff !default;
-$error-background:    #f2dede !default;
-$error-border:        #eed3d7 !default;
-
-$success-color:       #468847 !default;
-$success-text:        #ffffff !default;
-$success-background:  #dff0d8 !default;
-$success-border:      #d6e9c6 !default;
-
-$question-color:      #9855b4 !default;
-$question-text:       #ffffff !default;
-$question-background: #f0e6f4 !default;
-$question-border:     #f1dbfa !default;
-// shared defaults
-$aria-selectors:      true !default;
-
 
 %fieldset {
   background-color: $fieldset-color;
@@ -108,7 +80,7 @@ $aria-selectors:      true !default;
   display:block;
   position:relative;
   z-index:1;
-  width:100%;
+  width:auto;
   overflow:hidden;
   white-space:nowrap;
   text-overflow:ellipsis;
@@ -124,56 +96,58 @@ $aria-selectors:      true !default;
 }
 
 %prefix {
-  left:2px;
+  margin-right: -1 * $default-radius / 2; // Overlap border radius of other element
   @include rounded($default-radius 0 0 $default-radius);
 }
 
 %suffix {
-  left:-2px;
+  margin-left: -1 * $default-radius / 2; // Overlap border radius of other element
   @include rounded(0 $default-radius $default-radius 0);
 }
 
-.prefix {
-  @extend %prefix;
-}
+@if $ui-classes {
+  .prefix {
+    @extend %prefix;
+  }
 
-.suffix {
-  @extend %suffix;
-}
+  .suffix {
+    @extend %suffix;
+  }
 
-.error, .invalid {
-  input, select, textarea {
-    @extend %error-block;
-  }
-  .prefix, .suffix {
-    @extend %error-block-prefix;
-  }
-}
-input, select, textarea {
-  &.invalid, &.error {
-    @extend %error-block;
-  }
-  @if $aria-selectors {
-    &[aria-invalid="true"] {
+  .error, .invalid {
+    input, select, textarea {
       @extend %error-block;
     }
+    .prefix, .suffix {
+      @extend %error-block-prefix;
+    }
   }
-}
-.success, .valid {
   input, select, textarea {
-    @extend %success-block;
+    &.invalid, &.error {
+      @extend %error-block;
+    }
+    @if $aria-selectors {
+      &[aria-invalid="true"] {
+        @extend %error-block;
+      }
+    }
   }
-  .prefix, .suffix {
-    @extend %success-block-prefix;
-  }
-}
-input, select, textarea {
-  &.valid, &.success {
-    @extend %success-block;
-  }
-  @if $aria-selectors {
-    &[aria-invalid="false"] {
+  .success, .valid {
+    input, select, textarea {
       @extend %success-block;
+    }
+    .prefix, .suffix {
+      @extend %success-block-prefix;
+    }
+  }
+  input, select, textarea {
+    &.valid, &.success {
+      @extend %success-block;
+    }
+    @if $aria-selectors {
+      &[aria-invalid="false"] {
+        @extend %success-block;
+      }
     }
   }
 }
