@@ -18,6 +18,9 @@
 %hr {
   border: 0;
   border-bottom: $border-thickness $border-style $border-color;
+  @if unit($gutter) is "rem" {
+    margin: remtopx($gutter) auto;
+  }
   margin: $gutter auto;
   clear: both;
 }

@@ -12,23 +12,23 @@
 }
 @mixin _clearfix                    { @include _clear; } // alias
 
-@mixin _padded($multiple: 1)        { padding: $gutter * $multiple; }
-@mixin _pad-top($multiple: 1)       { padding-top: $gutter * $multiple; }
-@mixin _pad-right($multiple: 1)     { padding-right: $gutter * $multiple; }
-@mixin _pad-bottom($multiple: 1)    { padding-bottom: $gutter * $multiple; }
-@mixin _pad-left($multiple: 1)      { padding-left: $gutter * $multiple; }
+@mixin _padded($multiple: 1)        { @if unit($gutter) is "rem" {padding: remtopx($gutter) * $multiple; } padding: $gutter * $multiple; }
+@mixin _pad-top($multiple: 1)       { @if unit($gutter) is "rem" {padding-top: remtopx($gutter) * $multiple; } padding-top: $gutter * $multiple; }
+@mixin _pad-right($multiple: 1)     { @if unit($gutter) is "rem" {padding-right: remtopx($gutter) * $multiple; } padding-right: $gutter * $multiple; }
+@mixin _pad-bottom($multiple: 1)    { @if unit($gutter) is "rem" {padding-bottom: remtopx($gutter) * $multiple; } padding-bottom: $gutter * $multiple; }
+@mixin _pad-left($multiple: 1)      { @if unit($gutter) is "rem" {padding-left: remtopx($gutter) * $multiple; } padding-left: $gutter * $multiple; }
 
-@mixin _gapped($multiple: 1)        { margin: $gutter * $multiple; }
-@mixin _gap-top($multiple: 1)       { margin-top: $gutter * $multiple; }
-@mixin _gap-right($multiple: 1)     { margin-right: $gutter * $multiple; }
-@mixin _gap-bottom($multiple: 1)    { margin-bottom: $gutter * $multiple; }
-@mixin _gap-left($multiple: 1)      { margin-left: $gutter * $multiple; }
+@mixin _gapped($multiple: 1)        { @if unit($gutter) is "rem" {margin: remtopx($gutter) * $multiple; } margin: $gutter * $multiple; }
+@mixin _gap-top($multiple: 1)       { @if unit($gutter) is "rem" {margin-top: remtopx($gutter) * $multiple; } margin-top: $gutter * $multiple; }
+@mixin _gap-right($multiple: 1)     { @if unit($gutter) is "rem" {margin-right: remtopx($gutter) * $multiple; } margin-right: $gutter * $multiple; }
+@mixin _gap-bottom($multiple: 1)    { @if unit($gutter) is "rem" {margin-bottom: remtopx($gutter) * $multiple; } margin-bottom: $gutter * $multiple; }
+@mixin _gap-left($multiple: 1)      { @if unit($gutter) is "rem" {margin-left: remtopx($gutter) * $multiple; } margin-left: $gutter * $multiple; }
 
-@mixin _offset($multiple: 1)        { margin: (-$gutter * $multiple); }
-@mixin _offset-top($multiple: 1)    { margin-top: (-$gutter * $multiple); }
-@mixin _offset-right($multiple: 1)  { margin-right: (-$gutter * $multiple); }
-@mixin _offset-bottom($multiple: 1) { margin-bottom: (-$gutter * $multiple); }
-@mixin _offset-left($multiple: 1)   { margin-left: (-$gutter * $multiple); }
+@mixin _offset($multiple: 1)        { @if unit($gutter) is "rem" {margin: remtopx(-$gutter) * $multiple; } margin: (-$gutter * $multiple); }
+@mixin _offset-top($multiple: 1)    { @if unit($gutter) is "rem" {margin-top: remtopx(-$gutter) * $multiple; } margin-top: (-$gutter * $multiple); }
+@mixin _offset-right($multiple: 1)  { @if unit($gutter) is "rem" {margin-right: remtopx(-$gutter) * $multiple; } margin-right: (-$gutter * $multiple); }
+@mixin _offset-bottom($multiple: 1) { @if unit($gutter) is "rem" {margin-bottom: remtopx(-$gutter) * $multiple; } margin-bottom: (-$gutter * $multiple); }
+@mixin _offset-left($multiple: 1)   { @if unit($gutter) is "rem" {margin-left: remtopx(-$gutter) * $multiple; } margin-left: (-$gutter * $multiple); }
 
 @mixin _fixed($position: null) {
   position: fixed;

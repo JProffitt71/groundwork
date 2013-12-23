@@ -24,6 +24,9 @@
 }
 
 %table-cells {
+  @if unit($gutter) is "rem" {
+    padding: remtopx($gutter);
+  }
   padding: $gutter;
   background: darken(white, 1%);
   white-space: normal;

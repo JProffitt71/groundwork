@@ -29,6 +29,14 @@
   @return $number;
 }
 
+// Convert rem to pixels
+@function remtopx($val) {
+  $unit: unit($val);
+  @if $unit is "rem" {
+    $val: $font-size * numericvalue($val);
+  }
+  @return $val;
+}
 
 ///////////////////////
 //     utilities     //

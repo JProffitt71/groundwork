@@ -33,6 +33,9 @@
 }
 
 %heading {
+  @if unit($gutter) is "rem" {
+    margin-bottom: remtopx(1.5 * $gutter);
+  }
   margin-bottom: ($gutter * 1.5);
   line-height: $heading-line-height;
   @extend %#{$headings-font};
@@ -88,6 +91,9 @@
   }
   %dd {
     padding-left: 1em;
+    @if unit($gutter) is "rem" {
+      margin-bottom: remtopx($gutter);
+    }
     margin-bottom: $gutter;
   }
 }
@@ -279,8 +285,14 @@
   color: $code-text;
   border: $border-thickness $border-style $border-color;
   @include rounded($default-radius);
+  @if unit($gutter) is "rem" {
+    padding: 0 remtopx($gutter / 2);
+  }
   padding: 0 ($gutter / 2);
   &.block {
+    @if unit($gutter) is "rem" {
+      padding: remtopx($gutter / 2) remtopx($gutter);
+    }
     padding: ($gutter / 2) $gutter;
     @include _gap-bottom();
   }
