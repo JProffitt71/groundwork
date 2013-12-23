@@ -3,5 +3,7 @@ AddType text/x-component .htc
 
 Options +FollowSymlinks
 RewriteEngine on
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^.]+)$ $1.html
 RewriteRule ^pages/(.*) docs/$1
-
