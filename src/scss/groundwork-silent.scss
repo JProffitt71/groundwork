@@ -1,0 +1,66 @@
+// ============================================
+//           GroundworkCSS Silent
+//          Last Updated:2013-12-22
+// ============================================
+
+
+//---------- CUSTOM SETTINGS: ----------//
+@import "settings";         // customizable settings
+
+
+//--------- REQUIRED SETTINGS: ---------//
+$web-fonts: false;
+$placeholder-fonts: false;
+$type-tags: false;
+$type-classes: false;
+$type-colors: false;
+$responsive-headings: false;
+$styled-lists: false;
+$multi-column-classes: false;
+$grid-classes: false;
+$grid-adapter-classes: false;
+$conditional-classes: false;
+$flexbox-classes: false;
+$ui-classes: false;
+$ui-states-color-classes: false;
+$button-tags: false;
+$button-classes: false;
+$aria-selectors: false;
+$form-tags: false;
+$form-classes: false;
+$navigation-classes: false;
+$table-tags: false;
+$tab-classes: false;
+$positioning-classes: false;
+$spacer-classes: false;
+$spacer-mod-classes: false;
+$size-classes: false;
+$layout-classes: false;
+$typography-classes: false;
+$border-classes: false;
+$radius-classes: false;
+$rotation-classes: false;
+$transition-classes: false;
+$global-tags: false;
+
+
+//-------- REQUIRED COMPONENTS: --------//
+@import "core/all-core";    // constants, defaults, mixins, breakpoints, color palette
+@import "base/helpers";
+@import "base/grid";
+@import "icons/font-awesome/variables";
+@import "type/typography";
+
+
+//-------- OPTIONAL COMPONENTS: --------//
+
+// UI
+@import "ui/all-ui";
+// individual UI modules
+// @import "ui/boxes";
+// @import "ui/buttons";
+// @import "ui/forms";
+// @import "ui/messages";
+// @import "ui/nav";
+// @import "ui/tables";
+// @import "ui/tabs";
