@@ -22,6 +22,42 @@
 %row {
   @include _clear;
   width: $one-whole;
+
+  &.half-gutter {
+    width: auto;
+    @include _offset-left(0.5);
+
+    & > * {
+      @include _pad-left(0.5);
+    }
+  }
+
+  &.gutter {
+    width: auto;
+    @include _offset-left();
+
+    & > * {
+      @include _pad-left();
+    }
+  }
+
+  &.double-gutter {
+    width: auto;
+    @include _offset-left(2);
+
+    & > * {
+      @include _pad-left(2);
+    }
+  }
+
+  &.triple-gutter {
+    width: auto;
+    @include _offset-left(3);
+
+    & > * {
+      @include _pad-left(3);
+    }
+  }
 }
 
 @mixin _column() {

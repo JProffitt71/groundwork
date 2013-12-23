@@ -65,11 +65,11 @@
     <header class="padded">
       <div class="container">
         <div class="row">
-          <div class="one half">
+          <div class="one half ipad">
             <h2 class="logo"><a href="/" target="_parent"><img src="../images/groundwork-logo.svg" alt="GroundworkCSS">GroundworkCSS 2</a></h2>
           </div>
-          <div class="one half">
-            <p class="small double pad-top no-pad-small-tablet align-right align-left-small-tablet"><a href="https://github.com/groundworkcss/groundwork" target="_parent">Github Project</a> - Version 2.4.0<br>Created & Maintained by <a href="http://twitter.com/ghepting" target="_blank">Gary Hepting</a></p>
+          <div class="one half ipad">
+            <p class="small double align-right-ipad"><a href="https://github.com/groundworkcss/groundwork" target="_parent">Github Project</a> - Version 2.4.0<br>Created & Maintained by <a href="http://twitter.com/ghepting" target="_blank">Gary Hepting</a></p>
           </div>
         </div>
         <nav role="navigation" class="nav gap-top">
@@ -115,124 +115,118 @@
     <div class="container">
       <div class="padded">
         <div class="row">
-          <div class="three fifths bounceInRight animated">
+          <div class="three fifths ipad bounceInRight animated">
             <h1 class="zero museo-slab">Tables</h1>
             <p class="quicksand">Clean and easy to customize styling for tabular data.</p>
           </div>
-          <div class="two fifths align-right-ipad align-right-desktop flipInX animated">
+          <div class="two fifths ipad align-right-ipad flipInX animated">
             <p class="quicksand">Component Usage Example 8 of 14</p>
             <p><a href="messages.html" rel="prev" class="blue button"> Back</a> <a href="tabs.html" rel="next" class="green button">Next: Tabs</a></p>
           </div>
         </div>
       </div>
       <hr>
-      <div class="row">
-        <div class="one whole padded">
-          <div class="bounceInLeft animated">
-            <h4>Responsive Data Table</h4>
-            <div class="row">
-              <div class="one whole padded">
-                <table data-max="15" class="responsive">
-                  <thead>
-                    <tr>
-                      <th>Table Heading</th>
-                      <th>Table Heading</th>
-                      <th>Table Heading</th>
-                      <th>Table Heading</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                    </tr>
-                    <tr>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                    </tr>
-                    <tr>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                    </tr>
-                    <tr>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                      <td>Table cell</td>
-                    </tr>
-                  </tbody>
-                  <tfoot>
-                    <tr>
-                      <td>Footer cell</td>
-                      <td>Footer cell</td>
-                      <td>Footer cell</td>
-                      <td>Footer cell</td>
-                    </tr>
-                  </tfoot>
-                </table>
-              </div>
-            </div>
-            <div class="row">
-              <div class="one whole pad-left pad-right">
-                <pre data-lang="html">&lt;table class=&quot;responsive&quot; data-max=&quot;15&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Table Heading&lt;/th&gt;
-      &lt;th&gt;Table Heading&lt;/th&gt;
-      &lt;th&gt;Table Heading&lt;/th&gt;
-      &lt;th&gt;Table Heading&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Table cell&lt;/td&gt;
-      &lt;td&gt;Table cell&lt;/td&gt;
-      &lt;td&gt;Table cell&lt;/td&gt;
-      &lt;td&gt;Table cell&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Table cell&lt;/td&gt;
-      &lt;td&gt;Table cell&lt;/td&gt;
-      &lt;td&gt;Table cell&lt;/td&gt;
-      &lt;td&gt;Table cell&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Table cell&lt;/td&gt;
-      &lt;td&gt;Table cell&lt;/td&gt;
-      &lt;td&gt;Table cell&lt;/td&gt;
-      &lt;td&gt;Table cell&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Table cell&lt;/td&gt;
-      &lt;td&gt;Table cell&lt;/td&gt;
-      &lt;td&gt;Table cell&lt;/td&gt;
-      &lt;td&gt;Table cell&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-  &lt;tfoot&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Footer cell&lt;/td&gt;
-      &lt;td&gt;Footer cell&lt;/td&gt;
-      &lt;td&gt;Footer cell&lt;/td&gt;
-      &lt;td&gt;Footer cell&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tfoot&gt;
+      <div class="padded">
+        <div class="bounceInLeft animated">
+          <h4>Responsive Data Table</h4>
+          <div class="pad-left pad-right">
+            <table data-max="15" class="responsive gap-bottom">
+              <thead>
+                <tr>
+                  <th>Table Heading</th>
+                  <th>Table Heading</th>
+                  <th>Table Heading</th>
+                  <th>Table Heading</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Table cell</td>
+                  <td>Table cell</td>
+                  <td>Table cell</td>
+                  <td>Table cell</td>
+                </tr>
+                <tr>
+                  <td>Table cell</td>
+                  <td>Table cell</td>
+                  <td>Table cell</td>
+                  <td>Table cell</td>
+                </tr>
+                <tr>
+                  <td>Table cell</td>
+                  <td>Table cell</td>
+                  <td>Table cell</td>
+                  <td>Table cell</td>
+                </tr>
+                <tr>
+                  <td>Table cell</td>
+                  <td>Table cell</td>
+                  <td>Table cell</td>
+                  <td>Table cell</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>Footer cell</td>
+                  <td>Footer cell</td>
+                  <td>Footer cell</td>
+                  <td>Footer cell</td>
+                </tr>
+              </tfoot>
+            </table>
+            <pre data-lang="html">&lt;table class=&quot;responsive&quot; data-max=&quot;15&quot;&gt;
+&lt;thead&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Table Heading&lt;/th&gt;
+    &lt;th&gt;Table Heading&lt;/th&gt;
+    &lt;th&gt;Table Heading&lt;/th&gt;
+    &lt;th&gt;Table Heading&lt;/th&gt;
+  &lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Table cell&lt;/td&gt;
+    &lt;td&gt;Table cell&lt;/td&gt;
+    &lt;td&gt;Table cell&lt;/td&gt;
+    &lt;td&gt;Table cell&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Table cell&lt;/td&gt;
+    &lt;td&gt;Table cell&lt;/td&gt;
+    &lt;td&gt;Table cell&lt;/td&gt;
+    &lt;td&gt;Table cell&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Table cell&lt;/td&gt;
+    &lt;td&gt;Table cell&lt;/td&gt;
+    &lt;td&gt;Table cell&lt;/td&gt;
+    &lt;td&gt;Table cell&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Table cell&lt;/td&gt;
+    &lt;td&gt;Table cell&lt;/td&gt;
+    &lt;td&gt;Table cell&lt;/td&gt;
+    &lt;td&gt;Table cell&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;tfoot&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Footer cell&lt;/td&gt;
+    &lt;td&gt;Footer cell&lt;/td&gt;
+    &lt;td&gt;Footer cell&lt;/td&gt;
+    &lt;td&gt;Footer cell&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tfoot&gt;
 &lt;/table&gt;</pre>
-              </div>
-            </div>
           </div>
-          <hr><br>
-          <div class="bounceInRight animated">
-            <h4>States</h4>
-            <div class="row">
-              <div class="one third padded">
-                <table data-max="15" class="responsive info">
+        </div>
+        <hr>
+        <div class="bounceInRight animated">
+          <h4>States</h4>
+          <div class="pad-left pad-right">
+            <div class="row gutter">
+              <div class="one third">
+                <table data-max="15" class="responsive info gap-bottom">
                   <thead>
                     <tr>
                       <th>Info Table</th>
@@ -259,8 +253,8 @@
                   </tfoot>
                 </table>
               </div>
-              <div class="one third padded">
-                <table data-max="15" class="responsive success">
+              <div class="one third">
+                <table data-max="15" class="responsive success gap-bottom">
                   <thead>
                     <tr>
                       <th>Success Table</th>
@@ -287,8 +281,8 @@
                   </tfoot>
                 </table>
               </div>
-              <div class="one third padded">
-                <table data-max="15" class="responsive alert">
+              <div class="one third">
+                <table data-max="15" class="responsive alert gap-bottom">
                   <thead>
                     <tr>
                       <th>Alert Table</th>
@@ -316,9 +310,9 @@
                 </table>
               </div>
             </div>
-            <div class="row">
-              <div class="one third padded">
-                <table data-max="15" class="responsive question">
+            <div class="row gutter">
+              <div class="one third">
+                <table data-max="15" class="responsive question gap-bottom">
                   <thead>
                     <tr>
                       <th>Question Table</th>
@@ -345,8 +339,8 @@
                   </tfoot>
                 </table>
               </div>
-              <div class="one third padded">
-                <table data-max="15" class="responsive warning">
+              <div class="one third">
+                <table data-max="15" class="responsive warning gap-bottom">
                   <thead>
                     <tr>
                       <th>Warning Table</th>
@@ -373,8 +367,8 @@
                   </tfoot>
                 </table>
               </div>
-              <div class="one third padded">
-                <table data-max="15" class="responsive error">
+              <div class="one third">
+                <table data-max="15" class="responsive error gap-bottom">
                   <thead>
                     <tr>
                       <th>Error Table</th>
@@ -403,12 +397,14 @@
               </div>
             </div>
           </div>
-          <hr><br>
-          <div class="bounceInUp animated">
-            <h4>Colors</h4>
-            <div class="row">
-              <div class="one third padded">
-                <table data-max="15" class="responsive yellow">
+        </div>
+        <hr>
+        <div class="bounceInUp animated">
+          <h4>Colors</h4>
+          <div class="pad-left pad-right">
+            <div class="row gutter">
+              <div class="one third">
+                <table data-max="15" class="responsive yellow gap-bottom">
                   <thead>
                     <tr>
                       <th>Yellow Table</th>
@@ -435,8 +431,8 @@
                   </tfoot>
                 </table>
               </div>
-              <div class="one third padded">
-                <table data-max="15" class="responsive orange">
+              <div class="one third">
+                <table data-max="15" class="responsive orange gap-bottom">
                   <thead>
                     <tr>
                       <th>Orange Table</th>
@@ -463,8 +459,8 @@
                   </tfoot>
                 </table>
               </div>
-              <div class="one third padded">
-                <table data-max="15" class="responsive red">
+              <div class="one third">
+                <table data-max="15" class="responsive red gap-bottom">
                   <thead>
                     <tr>
                       <th>Red Table</th>
@@ -492,9 +488,9 @@
                 </table>
               </div>
             </div>
-            <div class="row">
-              <div class="one third padded">
-                <table data-max="15" class="responsive pink">
+            <div class="row gutter">
+              <div class="one third">
+                <table data-max="15" class="responsive pink gap-bottom">
                   <thead>
                     <tr>
                       <th>Pink Table</th>
@@ -521,8 +517,8 @@
                   </tfoot>
                 </table>
               </div>
-              <div class="one third padded">
-                <table data-max="15" class="responsive purple">
+              <div class="one third">
+                <table data-max="15" class="responsive purple gap-bottom">
                   <thead>
                     <tr>
                       <th>Purple Table</th>
@@ -549,8 +545,8 @@
                   </tfoot>
                 </table>
               </div>
-              <div class="one third padded">
-                <table data-max="15" class="responsive asphalt">
+              <div class="one third">
+                <table data-max="15" class="responsive asphalt gap-bottom">
                   <thead>
                     <tr>
                       <th>Asphalt Table</th>
@@ -578,9 +574,9 @@
                 </table>
               </div>
             </div>
-            <div class="row">
-              <div class="one third padded">
-                <table data-max="15" class="responsive blue">
+            <div class="row gutter">
+              <div class="one third">
+                <table data-max="15" class="responsive blue gap-bottom">
                   <thead>
                     <tr>
                       <th>Blue Table</th>
@@ -607,8 +603,8 @@
                   </tfoot>
                 </table>
               </div>
-              <div class="one third padded">
-                <table data-max="15" class="responsive turquoise">
+              <div class="one third">
+                <table data-max="15" class="responsive turquoise gap-bottom">
                   <thead>
                     <tr>
                       <th>Turquoise Table</th>
@@ -635,8 +631,8 @@
                   </tfoot>
                 </table>
               </div>
-              <div class="one third padded">
-                <table data-max="15" class="responsive green">
+              <div class="one third">
+                <table data-max="15" class="responsive green gap-bottom">
                   <thead>
                     <tr>
                       <th>Green Table</th>
@@ -669,10 +665,10 @@
       </div>
     </div>
     <footer class="gap-top bounceInUp animated">
-      <div class="box square charcoal">
+      <div class="box square charcoal zero">
         <div class="container padded">
-          <div class="row">
-            <div class="one small-tablet fourth padded">
+          <div class="row gutter">
+            <div class="one small-tablet fourth">
               <h5 class="green">Example Layouts</h5>
               <ul class="unstyled">
                 <li><a href="./layout-a.html">Web Page</a></li>
@@ -681,7 +677,7 @@
                 <li><a href="./layout-d.html">Contact Page</a></li>
               </ul>
             </div>
-            <div class="three small-tablet fourths padded">
+            <div class="three small-tablet fourths">
               <h5 class="blue">Documentation</h5>
               <ul class="unstyled three-column two-column-mobile">
                 <li><a href="./grid.html" title="Responsive grid system, grid adapters and helpers">Grid</a></li>
@@ -703,14 +699,14 @@
           </div>
         </div>
       </div>
-      <div class="box square">
+      <div class="box square zero">
         <div class="container padded">
-          <div class="row">
-            <div class="one half padded">
+          <div class="row gutter">
+            <div class="one half">
               <p>GroundworkCSS is <b>100% free</b> and <b>open source</b>. <a href="mailto:groundworkcss@gmail.com">Give a shout out</a> if you have any feedback.</p>
               <p>Find a bug? Help squash it by <a href="https://github.com/groundworkcss/groundwork/issues" target="_blank">filing an issue</a> on Github.</p>
             </div>
-            <div class="one half padded">
+            <div class="one half">
               <p class="large padded align-right align-center-small-tablet"><a href="http://twitter.com/groundworkcss" target="_blank" title="@groundworkcss" style="text-decoration:none;" class="large inline gapped"></a><a href="http://github.com/groundworkcss" target="_blank" title="@groundworkcss" style="text-decoration:none;" class="large inline gapped"></a><a href="mailto:groundworkcss@gmail.com" title="groundworkcss@gmail.com" style="text-decoration:none;" class="large inline gapped"></a></p>
             </div>
           </div>

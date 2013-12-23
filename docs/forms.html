@@ -65,11 +65,11 @@
     <header class="padded">
       <div class="container">
         <div class="row">
-          <div class="one half">
+          <div class="one half ipad">
             <h2 class="logo"><a href="/" target="_parent"><img src="../images/groundwork-logo.svg" alt="GroundworkCSS">GroundworkCSS 2</a></h2>
           </div>
-          <div class="one half">
-            <p class="small double pad-top no-pad-small-tablet align-right align-left-small-tablet"><a href="https://github.com/groundworkcss/groundwork" target="_parent">Github Project</a> - Version 2.4.0<br>Created & Maintained by <a href="http://twitter.com/ghepting" target="_blank">Gary Hepting</a></p>
+          <div class="one half ipad">
+            <p class="small double align-right-ipad"><a href="https://github.com/groundworkcss/groundwork" target="_parent">Github Project</a> - Version 2.4.0<br>Created & Maintained by <a href="http://twitter.com/ghepting" target="_blank">Gary Hepting</a></p>
           </div>
         </div>
         <nav role="navigation" class="nav gap-top">
@@ -115,184 +115,183 @@
     <div class="container">
       <div class="padded">
         <div class="row">
-          <div class="three fifths bounceInRight animated">
+          <div class="three fifths ipad bounceInRight animated">
             <h1 class="zero museo-slab">Form Elements</h1>
             <p class="quicksand">Easy to customize & flexible form elements wrapped in the grid system.</p>
           </div>
-          <div class="two fifths align-right-ipad align-right-desktop flipInX animated">
+          <div class="two fifths ipad align-right-ipad flipInX animated">
             <p class="quicksand">Component Usage Example 10 of 14</p>
             <p><a href="tables.html" rel="prev" class="blue button">Back</a> <a href="icons.html" rel="next" class="green button">Next: Icons</a></p>
           </div>
         </div>
       </div>
       <hr>
-      <div class="row bounceInRight animated">
-        <div class="one whole padded">
+      <div class="padded">
+        <div class="bounceInRight animated">
           <h4>Form Elements</h4>
-          <form action="#" method="post">
-            <fieldset>
-              <legend>Example HTML5 Form</legend>
-              <div class="row">
-                <div class="one half padded">
-                  <label for="name">Text Field</label>
-                  <input id="name" type="text" placeholder="First &amp; Last Name">
+          <div class="pad-left pad-right">
+            <form action="#" method="post" class="gap-bottom">
+              <fieldset>
+                <legend>Example HTML5 Form</legend>
+                <div class="row gutter">
+                  <div class="one half pad-bottom">
+                    <label for="name">Text Field</label>
+                    <input id="name" type="text" placeholder="First &amp; Last Name">
+                  </div>
+                  <div class="one half pad-bottom">
+                    <label for="email">Email Field</label>
+                    <input id="email" type="email" placeholder="you@example.com">
+                  </div>
                 </div>
-                <div class="one half padded">
-                  <label for="email">Email Field</label>
-                  <input id="email" type="email" placeholder="you@example.com">
+                <div class="row gutter">
+                  <div class="one whole pad-bottom">
+                    <label for="address">Address</label>
+                    <input id="address" type="text" placeholder="Street Address">
+                  </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="one whole padded">
-                  <label for="address">Address</label>
-                  <input id="address" type="text" placeholder="Street Address">
+                <div class="row gutter">
+                  <div class="two fourths pad-bottom">
+                    <input type="text" placeholder="City">
+                  </div>
+                  <div class="one fourth pad-bottom"><span class="select-wrap">
+                      <select>
+                        <option value="" disabled="" selected="">State</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                        <option value="AS">American Samoa</option>
+                        <option value="DC">District of Columbia</option>
+                        <option value="FM">Federated States of Micronesia</option>
+                        <option value="GU">Guam</option>
+                        <option value="MH">Marshall Islands</option>
+                        <option value="MP">Northern Mariana Islands</option>
+                        <option value="PW">Palau</option>
+                        <option value="PR">Puerto Rico</option>
+                        <option value="VI">Virgin Islands</option>
+                        <option value="AE">Armed Forces Africa</option>
+                        <option value="AA">Armed Forces Americas</option>
+                        <option value="AE">Armed Forces Canada</option>
+                        <option value="AE">Armed Forces Europe</option>
+                        <option value="AE">Armed Forces Middle East</option>
+                        <option value="AP">Armed Forces Pacific</option>
+                        <option value="AB">Alberta</option>
+                        <option value="BC">British Columbia</option>
+                        <option value="MB">Manitoba</option>
+                        <option value="NB">New Brunswick</option>
+                        <option value="NL">Newfoundland and Labrador</option>
+                        <option value="NS">Nova Scotia</option>
+                        <option value="NT">Northwest Territories</option>
+                        <option value="NU">Nunavut</option>
+                        <option value="ON">Ontario</option>
+                        <option value="PE">Prince Edward Island</option>
+                        <option value="QC">Quebec</option>
+                        <option value="SK">Saskatchewan</option>
+                        <option value="YT">Yukon Territory</option>
+                      </select></span></div>
+                  <div class="one fourth pad-bottom">
+                    <input type="text" placeholder="Zip Code">
+                  </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="two fourths padded">
-                  <input type="text" placeholder="City">
+                <div class="row gutter">
+                  <div class="one whole pad-bottom">
+                    <label for="message">Special Instructions</label>
+                    <textarea id="message" placeholder="Enter your message..."></textarea>
+                  </div>
                 </div>
-                <div class="one fourth padded"><span class="select-wrap">
-                    <select>
-                      <option value="" disabled="" selected="">State</option>
-                      <option value="AL">Alabama</option>
-                      <option value="AK">Alaska</option>
-                      <option value="AZ">Arizona</option>
-                      <option value="AR">Arkansas</option>
-                      <option value="CA">California</option>
-                      <option value="CO">Colorado</option>
-                      <option value="CT">Connecticut</option>
-                      <option value="DE">Delaware</option>
-                      <option value="FL">Florida</option>
-                      <option value="GA">Georgia</option>
-                      <option value="HI">Hawaii</option>
-                      <option value="ID">Idaho</option>
-                      <option value="IL">Illinois</option>
-                      <option value="IN">Indiana</option>
-                      <option value="IA">Iowa</option>
-                      <option value="KS">Kansas</option>
-                      <option value="KY">Kentucky</option>
-                      <option value="LA">Louisiana</option>
-                      <option value="ME">Maine</option>
-                      <option value="MD">Maryland</option>
-                      <option value="MA">Massachusetts</option>
-                      <option value="MI">Michigan</option>
-                      <option value="MN">Minnesota</option>
-                      <option value="MS">Mississippi</option>
-                      <option value="MO">Missouri</option>
-                      <option value="MT">Montana</option>
-                      <option value="NE">Nebraska</option>
-                      <option value="NV">Nevada</option>
-                      <option value="NH">New Hampshire</option>
-                      <option value="NJ">New Jersey</option>
-                      <option value="NM">New Mexico</option>
-                      <option value="NY">New York</option>
-                      <option value="NC">North Carolina</option>
-                      <option value="ND">North Dakota</option>
-                      <option value="OH">Ohio</option>
-                      <option value="OK">Oklahoma</option>
-                      <option value="OR">Oregon</option>
-                      <option value="PA">Pennsylvania</option>
-                      <option value="RI">Rhode Island</option>
-                      <option value="SC">South Carolina</option>
-                      <option value="SD">South Dakota</option>
-                      <option value="TN">Tennessee</option>
-                      <option value="TX">Texas</option>
-                      <option value="UT">Utah</option>
-                      <option value="VT">Vermont</option>
-                      <option value="VA">Virginia</option>
-                      <option value="WA">Washington</option>
-                      <option value="WV">West Virginia</option>
-                      <option value="WI">Wisconsin</option>
-                      <option value="WY">Wyoming</option>
-                      <option value="AS">American Samoa</option>
-                      <option value="DC">District of Columbia</option>
-                      <option value="FM">Federated States of Micronesia</option>
-                      <option value="GU">Guam</option>
-                      <option value="MH">Marshall Islands</option>
-                      <option value="MP">Northern Mariana Islands</option>
-                      <option value="PW">Palau</option>
-                      <option value="PR">Puerto Rico</option>
-                      <option value="VI">Virgin Islands</option>
-                      <option value="AE">Armed Forces Africa</option>
-                      <option value="AA">Armed Forces Americas</option>
-                      <option value="AE">Armed Forces Canada</option>
-                      <option value="AE">Armed Forces Europe</option>
-                      <option value="AE">Armed Forces Middle East</option>
-                      <option value="AP">Armed Forces Pacific</option>
-                      <option value="AB">Alberta</option>
-                      <option value="BC">British Columbia</option>
-                      <option value="MB">Manitoba</option>
-                      <option value="NB">New Brunswick</option>
-                      <option value="NL">Newfoundland and Labrador</option>
-                      <option value="NS">Nova Scotia</option>
-                      <option value="NT">Northwest Territories</option>
-                      <option value="NU">Nunavut</option>
-                      <option value="ON">Ontario</option>
-                      <option value="PE">Prince Edward Island</option>
-                      <option value="QC">Quebec</option>
-                      <option value="SK">Saskatchewan</option>
-                      <option value="YT">Yukon Territory</option>
-                    </select></span></div>
-                <div class="one fourth padded">
-                  <input type="text" placeholder="Zip Code">
+                <div class="row gutter">
+                  <div class="one whole pad-bottom">
+                    <label for="twitter">Prefixed &amp; Suffixed</label>
+                  </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="one whole padded">
-                  <label for="message">Special Instructions</label>
-                  <textarea id="message" placeholder="Enter your message..."></textarea>
-                </div>
-              </div>
-              <div class="row">
-                <div class="one whole pad-left">
-                  <label for="twitter">Prefixed & Suffixed</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="one half padded">
-                  <div class="row">
-                    <div class="one mobile sixth"><span class="prefix">@</span></div>
-                    <div class="five mobile sixths">
-                      <input id="twitter" type="text" name="twitter" placeholder="twitter handle">
+                <div class="row gutter">
+                  <div class="one half pad-bottom">
+                    <div class="row">
+                      <div class="one mobile sixth"><span class="prefix">@</span></div>
+                      <div class="five mobile sixths">
+                        <input id="twitter" type="text" name="twitter" placeholder="twitter handle">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="one half pad-bottom">
+                    <div class="row">
+                      <div class="three mobile fifths">
+                        <input type="text" name="sidereel" placeholder="desired username">
+                      </div>
+                      <div class="two mobile fifths"><span class="suffix">@example.com</span></div>
                     </div>
                   </div>
                 </div>
-                <div class="one half padded">
-                  <div class="row">
-                    <div class="three mobile fifths">
-                      <input type="text" name="sidereel" placeholder="desired username">
-                    </div>
-                    <div class="two mobile fifths"><span class="suffix">@example.com</span></div>
+                <div class="row gutter">
+                  <div class="one whole pad-bottom">
+                    <label for="thing1">Radio Buttons:</label>
+                    <ul class="unstyled zero">
+                      <li>
+                        <input id="thing1" type="radio" name="things" checked="">
+                        <label for="thing1" class="inline">Thing one</label>
+                      </li>
+                      <li>
+                        <input id="thing2" type="radio" name="things">
+                        <label for="thing2" class="inline">Thing two</label>
+                      </li>
+                    </ul>
                   </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="one whole padded">
-                  <label for="thing1">Radio Buttons:</label>
-                  <ul class="unstyled zero">
-                    <li>
-                      <input id="thing1" type="radio" name="things" checked="">
-                      <label for="thing1" class="inline">Thing one</label>
-                    </li>
-                    <li>
-                      <input id="thing2" type="radio" name="things">
-                      <label for="thing2" class="inline">Thing two</label>
-                    </li>
-                  </ul>
+                <div class="row gutter">
+                  <div class="one whole pad-bottom">
+                    <input id="allthings" type="checkbox" name="things" checked="">
+                    <label for="allthings" class="inline"> I want all the things!</label>
+                  </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="one whole padded">
-                  <input id="allthings" type="checkbox" name="things" checked="">
-                  <label for="allthings" class="inline"> I want all the things!</label>
-                </div>
-              </div>
-            </fieldset>
-          </form>
-          <div class="row">
-            <div class="one whole pad-top">
-              <pre data-lang="html">&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;
+              </fieldset>
+            </form>
+            <pre data-lang="html">&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;
   &lt;fieldset&gt;
     &lt;legend&gt;Example HTML5 Form&lt;/legend&gt;
     &lt;div class=&quot;row&quot;&gt;
@@ -453,43 +452,25 @@
     &lt;/div&gt;
   &lt;/fieldset&gt;
 &lt;/form&gt;</pre>
-            </div>
           </div>
         </div>
-      </div><br>
-      <hr>
-      <div class="row bounceInLeft animated">
-        <div class="one whole padded">
+        <hr>
+        <div class="bounceInLeft animated">
           <h4>Form Validation</h4>
-          <div class="row">
-            <div class="one half padded">
-              <p class="error">Invalid Entry</p>
-              <p>
-                <input aria-invalid="true" value="Invalid entry">
-              </p>
-              <div class="invalid row">
-                <div class="one mobile tenth"><span class="prefix">@</span></div>
-                <div class="nine mobile tenths">
+          <div class="pad-left pad-right">
+            <div class="row gutter">
+              <div class="one half">
+                <p class="error">Invalid Entry</p>
+                <p>
                   <input aria-invalid="true" value="Invalid entry">
+                </p>
+                <div class="invalid row gap-bottom">
+                  <div class="one mobile tenth"><span class="prefix">@</span></div>
+                  <div class="nine mobile tenths">
+                    <input aria-invalid="true" value="Invalid entry">
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="one half padded">
-              <p class="success">Validated Entry</p>
-              <p>
-                <input aria-invalid="false" value="Valid entry">
-              </p>
-              <div class="valid row">
-                <div class="one mobile tenth"><span class="prefix">@</span></div>
-                <div class="nine mobile tenths">
-                  <input aria-invalid="false" value="Valid entry">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row gap-top">
-            <div class="one half pad-left pad-right">
-              <pre data-lang="html">&lt;p class=&quot;invalid&quot;&gt;
+                <pre data-lang="html">&lt;p class=&quot;invalid&quot;&gt;
   &lt;input value=&quot;Invalid entry&quot;&gt;
 &lt;/p&gt;
 &lt;div class=&quot;invalid row&quot;&gt;
@@ -498,9 +479,19 @@
     &lt;input value=&quot;Invalid entry&quot;&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
-            </div>
-            <div class="one half pad-left pad-right">
-              <pre data-lang="html">&lt;p class=&quot;valid&quot;&gt;
+              </div>
+              <div class="one half">
+                <p class="success">Validated Entry</p>
+                <p>
+                  <input aria-invalid="false" value="Valid entry">
+                </p>
+                <div class="valid row gap-bottom">
+                  <div class="one mobile tenth"><span class="prefix">@</span></div>
+                  <div class="nine mobile tenths">
+                    <input aria-invalid="false" value="Valid entry">
+                  </div>
+                </div>
+                <pre data-lang="html">&lt;p class=&quot;valid&quot;&gt;
   &lt;input value=&quot;Valid entry&quot;&gt;
 &lt;/p&gt;
 &lt;div class=&quot;valid row&quot;&gt;
@@ -509,16 +500,17 @@
     &lt;input value=&quot;Valid entry&quot;&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
     <footer class="gap-top bounceInUp animated">
-      <div class="box square charcoal">
+      <div class="box square charcoal zero">
         <div class="container padded">
-          <div class="row">
-            <div class="one small-tablet fourth padded">
+          <div class="row gutter">
+            <div class="one small-tablet fourth">
               <h5 class="green">Example Layouts</h5>
               <ul class="unstyled">
                 <li><a href="./layout-a.html">Web Page</a></li>
@@ -527,7 +519,7 @@
                 <li><a href="./layout-d.html">Contact Page</a></li>
               </ul>
             </div>
-            <div class="three small-tablet fourths padded">
+            <div class="three small-tablet fourths">
               <h5 class="blue">Documentation</h5>
               <ul class="unstyled three-column two-column-mobile">
                 <li><a href="./grid.html" title="Responsive grid system, grid adapters and helpers">Grid</a></li>
@@ -549,14 +541,14 @@
           </div>
         </div>
       </div>
-      <div class="box square">
+      <div class="box square zero">
         <div class="container padded">
-          <div class="row">
-            <div class="one half padded">
+          <div class="row gutter">
+            <div class="one half">
               <p>GroundworkCSS is <b>100% free</b> and <b>open source</b>. <a href="mailto:groundworkcss@gmail.com">Give a shout out</a> if you have any feedback.</p>
               <p>Find a bug? Help squash it by <a href="https://github.com/groundworkcss/groundwork/issues" target="_blank">filing an issue</a> on Github.</p>
             </div>
-            <div class="one half padded">
+            <div class="one half">
               <p class="large padded align-right align-center-small-tablet"><a href="http://twitter.com/groundworkcss" target="_blank" title="@groundworkcss" style="text-decoration:none;" class="large inline gapped"></a><a href="http://github.com/groundworkcss" target="_blank" title="@groundworkcss" style="text-decoration:none;" class="large inline gapped"></a><a href="mailto:groundworkcss@gmail.com" title="groundworkcss@gmail.com" style="text-decoration:none;" class="large inline gapped"></a></p>
             </div>
           </div>

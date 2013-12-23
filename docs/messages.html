@@ -65,11 +65,11 @@
     <header class="padded">
       <div class="container">
         <div class="row">
-          <div class="one half">
+          <div class="one half ipad">
             <h2 class="logo"><a href="/" target="_parent"><img src="../images/groundwork-logo.svg" alt="GroundworkCSS">GroundworkCSS 2</a></h2>
           </div>
-          <div class="one half">
-            <p class="small double pad-top no-pad-small-tablet align-right align-left-small-tablet"><a href="https://github.com/groundworkcss/groundwork" target="_parent">Github Project</a> - Version 2.4.0<br>Created & Maintained by <a href="http://twitter.com/ghepting" target="_blank">Gary Hepting</a></p>
+          <div class="one half ipad">
+            <p class="small double align-right-ipad"><a href="https://github.com/groundworkcss/groundwork" target="_parent">Github Project</a> - Version 2.4.0<br>Created & Maintained by <a href="http://twitter.com/ghepting" target="_blank">Gary Hepting</a></p>
           </div>
         </div>
         <nav role="navigation" class="nav gap-top">
@@ -115,45 +115,43 @@
     <div class="container">
       <div class="padded">
         <div class="row">
-          <div class="three fifths bounceInRight animated">
+          <div class="three fifths ipad bounceInRight animated">
             <h1 class="zero museo-slab">Message Boxes</h1>
             <p class="quicksand">Provide users with feedback or instructions.</p>
           </div>
-          <div class="two fifths align-right-ipad align-right-desktop flipInX animated">
+          <div class="two fifths ipad align-right-ipad flipInX animated">
             <p class="quicksand">Component Usage Example 7 of 14</p>
             <p><a href="boxes.html" rel="prev" class="blue button">Back</a> <a href="tables.html" rel="next" class="green button">Next: Tables</a></p>
           </div>
         </div>
       </div>
       <hr>
-      <div class="row">
-        <div class="one whole padded">
-          <div class="row">
-            <div class="one whole bounceInLeft animated">
-              <div class="pad-top pad-left pad-right">
-                <h4>Message Boxes</h4>
+      <div class="padded">
+        <div class="bounceInLeft animated">
+          <h4>Message Boxes</h4>
+          <div class="pad-left pad-right">
+            <div class="row gutter">
+              <div class="one half">
+                <p class="message">This is an important message.</p>
               </div>
-              <div class="row">
-                <div class="one half pad-left pad-right pad-bottom">
-                  <p class="message">This is an important message.</p>
-                </div>
-                <div class="one half pad-left pad-right pad-bottom">
-                  <p class="dismissible message">This is a dismissible message.</p>
-                </div>
-              </div>
-              <div class="row">
-                <div class="one half pad-left pad-right">
-                  <pre data-lang="html">&lt;p class=&quot;message&quot;&gt;This is an important message.&lt;/p&gt;</pre>
-                </div>
-                <div class="one half pad-left pad-right">
-                  <pre data-lang="html">&lt;p class=&quot;message dismissible&quot;&gt;This is a dismissible message.&lt;/p&gt;</pre>
-                </div>
+              <div class="one half">
+                <p class="dismissible message">This is a dismissible message.</p>
               </div>
             </div>
-          </div><br>
-          <div class="row">
-            <div class="one half padded bounceInUp animated">
-              <h4>States</h4>
+            <div class="row gutter">
+              <div class="one half">
+                <pre data-lang="html">&lt;p class=&quot;message&quot;&gt;This is an important message.&lt;/p&gt;</pre>
+              </div>
+              <div class="one half">
+                <pre data-lang="html">&lt;p class=&quot;message dismissible&quot;&gt;This is a dismissible message.&lt;/p&gt;</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row gutter">
+          <div class="one half bounceInUp animated">
+            <h4>States</h4>
+            <div class="pad-left pad-right no-pad-right-desktop">
               <p class="info message">This is an info message.</p>
               <p class="info dismissible message">This is a dismissible info message.</p>
               <p class="success message">This is a success message.</p>
@@ -165,22 +163,24 @@
               <p class="warning message">This is a warning message.</p>
               <p class="warning dismissible message">This is a dismissible warning message.</p>
               <p class="error message">This is an error message.</p>
-              <p class="error dismissible message">This is a dismissible error message.</p><br>
-              <div class="row">
-                <div class="one half small-tablet pad-right no-pad-mobile">
-                  <h4>Square</h4>
-                  <p class="message square">This is a square message.</p>
-                  <p class="message square dismissible">This is a dismissible square message.</p>
-                </div>
-                <div class="one half small-tablet">
-                  <h4>Round</h4>
-                  <p class="message round align-center">This is a round message.</p>
-                  <p class="message round dismissible align-center">This is a dismissible round message.</p>
-                </div>
+              <p class="error dismissible message">This is a dismissible error message.</p>
+            </div>
+            <div class="row gutter">
+              <div class="one half small-tablet">
+                <h4>Square</h4>
+                <p class="message square">This is a square message.</p>
+                <p class="message square dismissible">This is a dismissible square message.</p>
+              </div>
+              <div class="one half small-tablet">
+                <h4>Round</h4>
+                <p class="message round align-center">This is a round message.</p>
+                <p class="message round dismissible align-center">This is a dismissible round message.</p>
               </div>
             </div>
-            <div class="one half padded bounceInDown animated">
-              <h4>Colors</h4>
+          </div>
+          <div class="one half bounceInDown animated">
+            <h4>Colors</h4>
+            <div class="pad-left pad-right no-pad-left-desktop">
               <p class="yellow message">This is a yellow message.</p>
               <p class="dismissible yellow message">This is a dismissible yellow message.</p>
               <p class="orange message">This is a orange message.</p>
@@ -207,10 +207,10 @@
       </div>
     </div>
     <footer class="gap-top bounceInUp animated">
-      <div class="box square charcoal">
+      <div class="box square charcoal zero">
         <div class="container padded">
-          <div class="row">
-            <div class="one small-tablet fourth padded">
+          <div class="row gutter">
+            <div class="one small-tablet fourth">
               <h5 class="green">Example Layouts</h5>
               <ul class="unstyled">
                 <li><a href="./layout-a.html">Web Page</a></li>
@@ -219,7 +219,7 @@
                 <li><a href="./layout-d.html">Contact Page</a></li>
               </ul>
             </div>
-            <div class="three small-tablet fourths padded">
+            <div class="three small-tablet fourths">
               <h5 class="blue">Documentation</h5>
               <ul class="unstyled three-column two-column-mobile">
                 <li><a href="./grid.html" title="Responsive grid system, grid adapters and helpers">Grid</a></li>
@@ -241,14 +241,14 @@
           </div>
         </div>
       </div>
-      <div class="box square">
+      <div class="box square zero">
         <div class="container padded">
-          <div class="row">
-            <div class="one half padded">
+          <div class="row gutter">
+            <div class="one half">
               <p>GroundworkCSS is <b>100% free</b> and <b>open source</b>. <a href="mailto:groundworkcss@gmail.com">Give a shout out</a> if you have any feedback.</p>
               <p>Find a bug? Help squash it by <a href="https://github.com/groundworkcss/groundwork/issues" target="_blank">filing an issue</a> on Github.</p>
             </div>
-            <div class="one half padded">
+            <div class="one half">
               <p class="large padded align-right align-center-small-tablet"><a href="http://twitter.com/groundworkcss" target="_blank" title="@groundworkcss" style="text-decoration:none;" class="large inline gapped"></a><a href="http://github.com/groundworkcss" target="_blank" title="@groundworkcss" style="text-decoration:none;" class="large inline gapped"></a><a href="mailto:groundworkcss@gmail.com" title="groundworkcss@gmail.com" style="text-decoration:none;" class="large inline gapped"></a></p>
             </div>
           </div>

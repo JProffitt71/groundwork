@@ -65,11 +65,11 @@
     <header class="padded">
       <div class="container">
         <div class="row">
-          <div class="one half">
+          <div class="one half ipad">
             <h2 class="logo"><a href="/" target="_parent"><img src="../images/groundwork-logo.svg" alt="GroundworkCSS">GroundworkCSS 2</a></h2>
           </div>
-          <div class="one half">
-            <p class="small double pad-top no-pad-small-tablet align-right align-left-small-tablet"><a href="https://github.com/groundworkcss/groundwork" target="_parent">Github Project</a> - Version 2.4.0<br>Created & Maintained by <a href="http://twitter.com/ghepting" target="_blank">Gary Hepting</a></p>
+          <div class="one half ipad">
+            <p class="small double align-right-ipad"><a href="https://github.com/groundworkcss/groundwork" target="_parent">Github Project</a> - Version 2.4.0<br>Created & Maintained by <a href="http://twitter.com/ghepting" target="_blank">Gary Hepting</a></p>
           </div>
         </div>
         <nav role="navigation" class="nav gap-top">
@@ -115,85 +115,79 @@
     <div class="container">
       <div class="padded">
         <div class="row">
-          <div class="three fifths bounceInRight animated">
+          <div class="three fifths ipad bounceInRight animated">
             <h1 class="zero museo-slab">Placeholder Text</h1>
             <p class="quicksand">Rapid prototyping with dynamic placeholder text and the <a href="https://github.com/christiannaths/Redacted-Font" target="_blank">Redacted</a> placeholder fonts.</p>
           </div>
-          <div class="two fifths align-right-ipad align-right-desktop flipInX animated">
+          <div class="two fifths ipad align-right-ipad flipInX animated">
             <p class="quicksand">Component Usage Example 13 of 14</p>
             <p><a href="responsive-text.html" rel="prev" class="blue button">Back</a> <a href="animations.html" rel="next" class="green button">Next: Animations</a></p>
           </div>
         </div>
       </div>
       <hr>
-      <div class="row">
-        <div class="one whole padded">
-          <div class="bounceInLeft animated">
-            <h4 class="zero">Dynamic Placeholder Text</h4>
-            <p class="small zero">Dynamically generated placeholder text</p>
-            <div class="row">
-              <div class="one whole padded">
-                <div class="row">
-                  <div class="one third padded">
-                    <div class="placeholderText"></div>
-                  </div>
-                  <div class="one third padded">
-                    <div data-placeholder-type="words" data-placeholder-amount="100" class="placeholderText"></div>
-                  </div>
-                  <div class="one third padded">
-                    <h1 data-placeholder-type="words" data-placeholder-amount="3" data-placeholder-punctuation="false" data-placeholder-html="false" class="placeholderText"></h1>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="one third pad-left pad-right">
-                    <pre data-lang="html" class="gap-top">&lt;div class=&quot;placeholderText&quot;&gt;&lt;/div&gt;</pre>
-                    <p class="small">Default options (1 paragraph, including HTML paragraph tags and punctuation)</p>
-                  </div>
-                  <div class="one third pad-left pad-right">
-                    <pre data-lang="html" class="gap-top">&lt;div class=&quot;placeholderText&quot; 
-     data-placeholder-type=&quot;words&quot; 
-     data-placeholder-amount=&quot;100&quot;&gt;
+      <div class="padded">
+        <div class="bounceInLeft animated">
+          <h4 class="zero">Dynamic Placeholder Text</h4>
+          <p class="small">Dynamically generated placeholder text</p>
+          <div class="pad-left pad-right">
+            <div class="row gutter">
+              <div class="one third">
+                <div class="placeholderText"></div>
+              </div>
+              <div class="one third">
+                <div data-placeholder-type="words" data-placeholder-amount="100" class="placeholderText"></div>
+              </div>
+              <div class="one third">
+                <h1 data-placeholder-type="words" data-placeholder-amount="3" data-placeholder-punctuation="false" data-placeholder-html="false" class="placeholderText"></h1>
+              </div>
+            </div>
+            <div class="row gutter">
+              <div class="one third">
+                <pre data-lang="html">&lt;div class=&quot;placeholderText&quot;&gt;&lt;/div&gt;</pre>
+                <p class="small">Default options (1 paragraph, including HTML paragraph tags and punctuation)</p>
+              </div>
+              <div class="one third">
+                <pre data-lang="html">&lt;div class=&quot;placeholderText&quot; 
+ data-placeholder-type=&quot;words&quot; 
+ data-placeholder-amount=&quot;100&quot;&gt;
 &lt;/div&gt;</pre>
-                    <p class="small">100 words, including HTML paragraph tags and punctuation</p>
-                  </div>
-                  <div class="one third pad-left pad-right">
-                    <pre data-lang="html" class="gap-top">&lt;h1 class=&quot;placeholderText&quot;
-     data-placeholder-type=&quot;words&quot;
-     data-placeholder-amount=&quot;3&quot;
-     data-placeholder-punctuation=&quot;false&quot;
-     data-placeholder-html=&quot;false&quot;&gt;
+                <p class="small">100 words, including HTML paragraph tags and punctuation</p>
+              </div>
+              <div class="one third">
+                <pre data-lang="html">&lt;h1 class=&quot;placeholderText&quot;
+ data-placeholder-type=&quot;words&quot;
+ data-placeholder-amount=&quot;3&quot;
+ data-placeholder-punctuation=&quot;false&quot;
+ data-placeholder-html=&quot;false&quot;&gt;
 &lt;/h1&gt;</pre>
-                    <p class="small">3 words without HTML paragraph tags or punctuation</p>
-                  </div>
-                </div>
+                <p class="small">3 words without HTML paragraph tags or punctuation</p>
               </div>
             </div>
           </div>
-          <div class="bounceInRight animated"><br>
-            <hr>
-            <h4 class="zero">Redacted Placeholder Fonts</h4>
-            <div class="row">
-              <div class="one whole padded">
-                <div class="row">
-                  <div class="one whole padded">
-                    <p>Redacted</p>
-                    <div data-placeholder-amount="3" class="placeholderText redacted"></div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="one third padded">
-                    <p>Redacted Script</p>
-                    <div data-placeholder-amount="1" class="placeholderText redacted-script"></div>
-                  </div>
-                  <div class="one third padded">
-                    <p>Redacted Script Light</p>
-                    <div data-placeholder-amount="1" class="placeholderText redacted-script-light"></div>
-                  </div>
-                  <div class="one third padded">
-                    <p>Redacted Script Bold</p>
-                    <div data-placeholder-amount="1" class="placeholderText redacted-script-bold"></div>
-                  </div>
-                </div>
+        </div>
+        <hr>
+        <div class="bounceInRight animated">
+          <h4>Redacted Placeholder Fonts</h4>
+          <div class="pad-left pad-right">
+            <div class="row gutter">
+              <div class="one whole">
+                <p>Redacted</p>
+                <div data-placeholder-amount="3" class="placeholderText redacted"></div>
+              </div>
+            </div>
+            <div class="row gutter">
+              <div class="one third">
+                <p>Redacted Script</p>
+                <div data-placeholder-amount="1" class="placeholderText redacted-script"></div>
+              </div>
+              <div class="one third">
+                <p>Redacted Script Light</p>
+                <div data-placeholder-amount="1" class="placeholderText redacted-script-light"></div>
+              </div>
+              <div class="one third">
+                <p>Redacted Script Bold</p>
+                <div data-placeholder-amount="1" class="placeholderText redacted-script-bold"></div>
               </div>
             </div>
           </div>
@@ -201,10 +195,10 @@
       </div>
     </div>
     <footer class="gap-top bounceInUp animated">
-      <div class="box square charcoal">
+      <div class="box square charcoal zero">
         <div class="container padded">
-          <div class="row">
-            <div class="one small-tablet fourth padded">
+          <div class="row gutter">
+            <div class="one small-tablet fourth">
               <h5 class="green">Example Layouts</h5>
               <ul class="unstyled">
                 <li><a href="./layout-a.html">Web Page</a></li>
@@ -213,7 +207,7 @@
                 <li><a href="./layout-d.html">Contact Page</a></li>
               </ul>
             </div>
-            <div class="three small-tablet fourths padded">
+            <div class="three small-tablet fourths">
               <h5 class="blue">Documentation</h5>
               <ul class="unstyled three-column two-column-mobile">
                 <li><a href="./grid.html" title="Responsive grid system, grid adapters and helpers">Grid</a></li>
@@ -235,14 +229,14 @@
           </div>
         </div>
       </div>
-      <div class="box square">
+      <div class="box square zero">
         <div class="container padded">
-          <div class="row">
-            <div class="one half padded">
+          <div class="row gutter">
+            <div class="one half">
               <p>GroundworkCSS is <b>100% free</b> and <b>open source</b>. <a href="mailto:groundworkcss@gmail.com">Give a shout out</a> if you have any feedback.</p>
               <p>Find a bug? Help squash it by <a href="https://github.com/groundworkcss/groundwork/issues" target="_blank">filing an issue</a> on Github.</p>
             </div>
-            <div class="one half padded">
+            <div class="one half">
               <p class="large padded align-right align-center-small-tablet"><a href="http://twitter.com/groundworkcss" target="_blank" title="@groundworkcss" style="text-decoration:none;" class="large inline gapped"></a><a href="http://github.com/groundworkcss" target="_blank" title="@groundworkcss" style="text-decoration:none;" class="large inline gapped"></a><a href="mailto:groundworkcss@gmail.com" title="groundworkcss@gmail.com" style="text-decoration:none;" class="large inline gapped"></a></p>
             </div>
           </div>
