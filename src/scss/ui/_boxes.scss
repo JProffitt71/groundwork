@@ -65,9 +65,13 @@
   }
 }
 
-@if $ui-classes {
-  .box {
-    @extend %box;
-    @include box-modifiers;
+@include output() {
+
+  @if $ui-classes {
+    .box {
+      @extend %box;
+      @include box-modifiers;
+    }
   }
+
 }

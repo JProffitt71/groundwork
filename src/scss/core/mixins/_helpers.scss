@@ -366,3 +366,10 @@
     }
   }
 }
+
+// Output helper
+@mixin output() {
+  @if not $silent {
+    @content;
+  }
+}

@@ -262,146 +262,150 @@
 %success, %valid  { color: $success-color; }
 %question         { color: $question-color; }
 
-// responsive text
-.js {
-  .responsive:not(table) {
-    @extend %truncate;
-    transition: font $default-transition-speed;
-  }
-}
+@include output() {
 
-body {
-  @extend %document;
-}
+  // responsive text
+  .js {
+    .responsive:not(table) {
+      @extend %truncate;
+      transition: font $default-transition-speed;
+    }
+  }
 
-::-moz-selection {
-  @include _selection;
-}
-::selection {
-  @include _selection;
-}
+  body {
+    @extend %document;
+  }
 
-@if $type-styles {
-  a, a:visited {
-    @extend %links;
+  ::-moz-selection {
+    @include _selection;
   }
-  ul, ol {
-    @extend %list;
-    li {
-      @extend %list-item;
-    }
+  ::selection {
+    @include _selection;
   }
-  dl {
-    @extend %dl;
-    dt {
-      @extend %dt;
-    }
-    dd {
-      @extend %dd;
-    }
-  }
-  abbr[title], dfn[title],
-  abbr[data-title], dfn[data-title] {
-    @extend %abbr;
-  }
-  @each $element in $type-elements {
-    #{$element} {
-      @extend %#{$element};
-    }
-  }
-}
 
-@if $styled-lists {
-  ul, ol {
-    &.unstyled {
-      @extend %unstyled;
+  @if $type-styles {
+    a, a:visited {
+      @extend %links;
     }
-  }
-  ul.list {
-    @extend %ul-list;
-    > li {
-      @extend %list-item;
-      @for $i from 1 through length($ui-states) {
-        &.#{nth($ui-states, $i)} {
-          &:before {
-            content: "#{nth($ui-icons, $i)}"; // see $ui-icons
-            font-size: 1.2em;
-          }
-        }
-      }
-    }
-  }
-  ul.checklist {
-    @extend %ul-checklist;
-    > li {
-      @extend %checklist-item;
-    }
-  }
-  ol.list {
-    @extend %ol-list;
-
-    @if $type-colors {
-      @for $i from 1 through length($modifier-name) {
-        &.#{nth($modifier-name, $i)} {
-          li {
-            &:before {
-              background: nth($modifier-code, $i);
-            }
-          }
-        }
-      }
+    ul, ol {
+      @extend %list;
       li {
-        @for $i from 1 through length($modifier-name) {
-          &.#{nth($modifier-name, $i)} {
-            &:before {
-              background: nth($modifier-code, $i);
-            }
-          }
-        }
+        @extend %list-item;
+      }
+    }
+    dl {
+      @extend %dl;
+      dt {
+        @extend %dt;
+      }
+      dd {
+        @extend %dd;
+      }
+    }
+    abbr[title], dfn[title],
+    abbr[data-title], dfn[data-title] {
+      @extend %abbr;
+    }
+    @each $element in $type-elements {
+      #{$element} {
+        @extend %#{$element};
+      }
+    }
+  }
+
+  @if $styled-lists {
+    ul, ol {
+      &.unstyled {
+        @extend %unstyled;
+      }
+    }
+    ul.list {
+      @extend %ul-list;
+      > li {
+        @extend %list-item;
         @for $i from 1 through length($ui-states) {
           &.#{nth($ui-states, $i)} {
             &:before {
-              background-color: nth($ui-states-colors, $i);
+              content: "#{nth($ui-icons, $i)}"; // see $ui-icons
+              font-size: 1.2em;
             }
           }
         }
       }
     }
+    ul.checklist {
+      @extend %ul-checklist;
+      > li {
+        @extend %checklist-item;
+      }
+    }
+    ol.list {
+      @extend %ol-list;
 
-    > li {
-      @extend %list-item;
+      @if $type-colors {
+        @for $i from 1 through length($modifier-name) {
+          &.#{nth($modifier-name, $i)} {
+            li {
+              &:before {
+                background: nth($modifier-code, $i);
+              }
+            }
+          }
+        }
+        li {
+          @for $i from 1 through length($modifier-name) {
+            &.#{nth($modifier-name, $i)} {
+              &:before {
+                background: nth($modifier-code, $i);
+              }
+            }
+          }
+          @for $i from 1 through length($ui-states) {
+            &.#{nth($ui-states, $i)} {
+              &:before {
+                background-color: nth($ui-states-colors, $i);
+              }
+            }
+          }
+        }
+      }
+
+      > li {
+        @extend %list-item;
+      }
     }
   }
-}
 
-@if $type-colors {
-  @for $i from 1 through length($modifier-name) {
-    .#{nth($modifier-name, $i)} {
-      color: nth($modifier-code, $i);
-    }
-    .#{nth($modifier-name, $i)}-bg {
-      background: nth($modifier-code, $i);
-      color: nth($modifier-text, $i);
+  @if $type-colors {
+    @for $i from 1 through length($modifier-name) {
+      .#{nth($modifier-name, $i)} {
+        color: nth($modifier-code, $i);
+      }
+      .#{nth($modifier-name, $i)}-bg {
+        background: nth($modifier-code, $i);
+        color: nth($modifier-text, $i);
+      }
     }
   }
-}
 
-@if $type-states {
-  @for $i from 1 through length($ui-states) {
-    .#{nth($ui-states, $i)} {
-      @extend %#{nth($ui-states, $i)};
-    }
-    .#{nth($ui-states, $i)}-bg {
-      background: nth($ui-states-backgrounds, $i);
-      color: nth($ui-states-colors, $i);
+  @if $type-states {
+    @for $i from 1 through length($ui-states) {
+      .#{nth($ui-states, $i)} {
+        @extend %#{nth($ui-states, $i)};
+      }
+      .#{nth($ui-states, $i)}-bg {
+        background: nth($ui-states-backgrounds, $i);
+        color: nth($ui-states-colors, $i);
+      }
     }
   }
-}
 
-@if $type-classes {
-  @each $modifier in $type-classnames {
-    .#{$modifier} {
-      @extend %#{$modifier};
+  @if $type-classes {
+    @each $modifier in $type-classnames {
+      .#{$modifier} {
+        @extend %#{$modifier};
+      }
     }
   }
+
 }

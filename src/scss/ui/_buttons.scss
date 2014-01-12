@@ -273,96 +273,100 @@ $disabled-border:     darken($disabled-color, 10%) !default;
   }
 }
 
-@if $button-tags {
-  button,
-  input[type=submit],
-  input[type=button],
-  input[type=reset] {
-    @extend %button;
+@include output() {
 
-    @if $button-classes {
+  @if $button-tags {
+    button,
+    input[type=submit],
+    input[type=button],
+    input[type=reset] {
+      @extend %button;
+
+      @if $button-classes {
+        @include button_modifiers;
+      }
+    }
+
+    .dropdown {
+      @extend %dropdown-holder;
+      &.on, &.active, &[aria-selected="true"], &[aria-pressed="true"] {
+        ul {
+         @extend %block;
+        }
+      }
+      > a, > button {
+        @extend %dropdown-button;
+      }
+      ul {
+        @extend %dropdown-list;
+        li {
+          @extend %dropdown-list-item;
+          a, button {
+            @extend %dropdown-menu-item;
+          }
+        }
+      }
+      hr {
+        @extend %dropdown-divider;
+      }
+    }
+  }
+
+  @if $button-classes {
+    .button,
+    a.button,
+    a.button:visited {
+      @extend %button;
       @include button_modifiers;
     }
-  }
-
-  .dropdown {
-    @extend %dropdown-holder;
-    &.on, &.active, &[aria-selected="true"], &[aria-pressed="true"] {
+    .dropdown {
+      @extend %dropdown-holder;
+      &.on, &.active, &[aria-selected="true"], &[aria-pressed="true"] {
+        ul {
+         @extend %block;
+        }
+      }
+      .button {
+        @extend %dropdown-button;
+      }
       ul {
-       @extend %block;
+        @extend %dropdown-list;
+        li {
+          @extend %dropdown-list-item;
+            a, button {
+            @extend %dropdown-menu-item;
+          }
+        }
+      }
+      hr {
+        @extend %dropdown-divider; 
       }
     }
-    > a, > button {
-      @extend %dropdown-button;
-    }
-    ul {
-      @extend %dropdown-list;
+    ul.button-group,
+    ol.button-group {
+      @extend %button-group;
       li {
-        @extend %dropdown-list-item;
         a, button {
-          @extend %dropdown-menu-item;
+          @include button_modifiers;
         }
       }
     }
-    hr {
-      @extend %dropdown-divider;
-    }
   }
-}
 
-@if $button-classes {
-  .button,
-  a.button,
-  a.button:visited {
-    @extend %button;
-    @include button_modifiers;
-  }
-  .dropdown {
-    @extend %dropdown-holder;
-    &.on, &.active, &[aria-selected="true"], &[aria-pressed="true"] {
-      ul {
-       @extend %block;
-      }
-    }
-    .button {
-      @extend %dropdown-button;
-    }
-    ul {
-      @extend %dropdown-list;
-      li {
-        @extend %dropdown-list-item;
-          a, button {
-          @extend %dropdown-menu-item;
+  @if $aria-selectors {
+    [role~="button"] {
+      @extend %button;
+
+      @for $i from 1 through length($aria-states) {
+        &[aria-#{nth($aria-states, $i)}] {
+          @extend %button-#{nth($aria-states, $i)};
         }
       }
-    }
-    hr {
-      @extend %dropdown-divider; 
-    }
-  }
-  ul.button-group,
-  ol.button-group {
-    @extend %button-group;
-    li {
-      a, button {
+
+      @if $button-classes {
         @include button_modifiers;
       }
     }
   }
-}
 
-@if $aria-selectors {
-  [role~="button"] {
-    @extend %button;
-
-    @for $i from 1 through length($aria-states) {
-      &[aria-#{nth($aria-states, $i)}] {
-        @extend %button-#{nth($aria-states, $i)};
-      }
-    }
-
-    @if $button-classes {
-      @include button_modifiers;
-    }
-  }
 }

@@ -94,107 +94,111 @@ $default-radius:      4px !default;
   }
 }
 
-@if $tab-classes {
-  .no-js {
+@include output() {
+
+  @if $tab-classes {
+    .no-js {
+      .tabs {
+        > div {
+          display: block;
+        }
+      }
+    }
     .tabs {
-      > div {
-        display: block;
+      &:not(.accordion) {
+        @extend %relative;
+        &.vertical {
+          > ul {
+            @extend %absolute, %absolute-top, %absolute-left, %absolute-bottom;
+            overflow: auto;
+          }
+        }
       }
-    }
-  }
-  .tabs {
-    &:not(.accordion) {
-      @extend %relative;
+      > ul {
+        @extend %tablist;
+        li {
+          @extend %tab;
+          @for $i from 1 through length($modifier-name) {
+            &.#{nth($modifier-name, $i)} {
+              @extend %tab-#{nth($modifier-name, $i)};
+            }
+          }
+          @for $i from 1 through length($tab-states) {
+            &.#{nth($tab-states, $i)} {
+              @extend %tab-#{nth($tab-states, $i)};
+            }
+          }
+        }
+      }
+      > div {
+        @extend %tabpanel;
+      }
       &.vertical {
-        > ul {
-          @extend %absolute, %absolute-top, %absolute-left, %absolute-bottom;
-          overflow: auto;
-        }
-      }
-    }
-    > ul {
-      @extend %tablist;
-      li {
-        @extend %tab;
-        @for $i from 1 through length($modifier-name) {
-          &.#{nth($modifier-name, $i)} {
-            @extend %tab-#{nth($modifier-name, $i)};
-          }
-        }
-        @for $i from 1 through length($tab-states) {
-          &.#{nth($tab-states, $i)} {
-            @extend %tab-#{nth($tab-states, $i)};
-          }
-        }
-      }
-    }
-    > div {
-      @extend %tabpanel;
-    }
-    &.vertical {
-      border-radius: $default-radius;
-      > ul {
-        background: $tab-border-color;
-        border-radius: $default-radius 0 0 $default-radius;
-        li {
-          @extend %block;
-          border-right: 0;
-          &:not(:first-child) {
-            border-radius: 0;
-          }
-          &:first-child {
-            border-radius: $default-radius 0 0 0;
-          }
-        }
-      }
-      > div {
-        clear: none;
         border-radius: $default-radius;
-      }
-    }
-    &.accordion {
-      > ul {
-        li {
-          @extend %block;
-          border-radius: 0;
-          &:first-child {
-            border-radius: $default-radius $default-radius 0 0;
-          }
-          &:last-of-type {
-            border-radius: 0 0 $default-radius $default-radius;
-          }
-          &.active {
-            @extend %tab-hover;
-            border-bottom: $border-thickness $border-style $tab-border-color;
+        > ul {
+          background: $tab-border-color;
+          border-radius: $default-radius 0 0 $default-radius;
+          li {
+            @extend %block;
+            border-right: 0;
+            &:not(:first-child) {
+              border-radius: 0;
+            }
+            &:first-child {
+              border-radius: $default-radius 0 0 0;
+            }
           }
         }
         > div {
-          padding-left: $gutter !important;
-          border-radius: 0;
-          &:last-child {
-            border-radius: 0 0 $default-radius $default-radius;
+          clear: none;
+          border-radius: $default-radius;
+        }
+      }
+      &.accordion {
+        > ul {
+          li {
+            @extend %block;
+            border-radius: 0;
+            &:first-child {
+              border-radius: $default-radius $default-radius 0 0;
+            }
+            &:last-of-type {
+              border-radius: 0 0 $default-radius $default-radius;
+            }
+            &.active {
+              @extend %tab-hover;
+              border-bottom: $border-thickness $border-style $tab-border-color;
+            }
+          }
+          > div {
+            padding-left: $gutter !important;
+            border-radius: 0;
+            &:last-child {
+              border-radius: 0 0 $default-radius $default-radius;
+            }
           }
         }
       }
     }
   }
-}
 
-@if $aria-selectors {
-  .accordion {
-    [role='tablist'] {
-      [role='tabpanel'] {
-        padding-left: $gutter !important;
+  @if $aria-selectors {
+    .accordion {
+      [role='tablist'] {
+        [role='tabpanel'] {
+          padding-left: $gutter !important;
+        }
       }
     }
+    [role~="tablist"] {
+      @extend %tablist;
+    }
+    [role~="tab"] {
+      @extend %tab;
+    }
+    [role~="tabpanel"] {
+      @extend %tabpanel;
+    }
   }
-  [role~="tablist"] {
-    @extend %tablist;
-  }
-  [role~="tab"] {
-    @extend %tab;
-  }
-  [role~="tabpanel"] {
-    @extend %tabpanel;
-  }
+
 }

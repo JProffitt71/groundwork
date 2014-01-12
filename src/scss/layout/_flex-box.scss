@@ -15,15 +15,18 @@
   @include vertical-center();
 }
 
-@if $flexbox-classes {
-  .flex-wrapper {
-    @extend %flex-wrapper;
-  }
-  .flex-box {
-    @extend %flex-box;
-  }
-  .vertical-center {
-    @extend %vertical-center;
-  }
-}
+@include output() {
 
+  @if $flexbox-classes {
+    .flex-wrapper {
+      @extend %flex-wrapper;
+    }
+    .flex-box {
+      @extend %flex-box;
+    }
+    .vertical-center {
+      @extend %vertical-center;
+    }
+  }
+
+}

@@ -54,73 +54,6 @@ $grid-count: 0;
   margin-right: auto !important;
 }
 
-$grid-selector-types: "%";
-@if $grid-classes {
-  .container          { @extend %container; }
-  .row                { @extend %row;
-    &.guttered {
-      @extend %guttered;
-      > * {
-        @extend %guttered;
-      }
-    }
-  }
-  .column             { @extend %column; }
-  .centered           { @extend %centered-column; }
-  $grid-selector-types: "%" ".";
-}
-
-// generate grid selectors
-@each $selector in $grid-selector-types {
-  @each $denominator in $grid-columns {
-    @for $numerator from 1 through $denominator - 1 {
-      $grid-selector: '';
-      @if $numerator == 1 {
-        $grid-selector: #{$selector + nth($numbers, $numerator) + '-' + nth($fractions-singular, $denominator)};
-      }@else{
-        $grid-selector: #{$selector + nth($numbers, $numerator) + '-' + nth($fractions-plural, $denominator)};
-      }
-      #{$grid-selector} {
-        @extend %column;
-        width: percentage($numerator / $denominator);
-        @for $num from 1 through $denominator - $numerator {
-          &#{$selector + 'right-' + nth($numbers, $num)} {
-            left: percentage($num / $denominator);
-          }
-          &#{$selector + 'left-' + nth($numbers, $num)} {
-            right: percentage($num / $denominator);
-          }
-        }
-      }
-    }
-  }
-}
-
-// generate responsive grid selectors
-@if $responsive and $grid-classes {
-  // desktop grid selectors
-  @media #{$desktop} {
-    @include grid-selectors('desktop');
-  }
-  // ipad grid selectors
-  @media #{$not-desktop} {
-    @include grid-collapse("ipad");
-  }
-  @media #{$ipad} {
-    @include grid-selectors('ipad');
-  }
-  // small tablet grid selectors
-  @media #{$small-tablet} {
-    @include grid-collapse("small-tablet");
-    @include grid-selectors('small-tablet');
-  }
-  // mobile grid selectors
-  @media #{$mobile} {
-    @include grid-collapse("mobile");
-    @include grid-selectors('mobile');
-  }
-}
-
 @mixin _grid-blocks($number) {
   width: percentage(1 / $number) !important;
   clear: none !important;
@@ -129,75 +62,145 @@ $grid-selector-types: "%";
   right: 0 !important;
 }
 
-// generate grid block selectors
-@if $grid-block-classes {
-  @each $number in $grid-blocks {
-    .#{nth($numbers, $number) + '-up'} {
-      @include _grid-blocks($number);
-      // grid blocks nth clearfix
-      &:nth-child(#{$number}n+1) {
-        clear: both !important;
-      }
-    }
-  }
-  @if $responsive {
-    // desktop grid blocks
-    @media #{$desktop} {
-      @each $number in $grid-blocks {
-        .#{nth($numbers, $number) + '-up-desktop'} {
-          @include _grid-blocks($number);
-          // desktop grid blocks nth clearfix
-          &:nth-child(#{$number}n+1) {
-            clear: both !important;
-          }
-        }
-      }
-    }
-    // ipad grid blocks
-    @media #{$ipad} and #{$tablet} and #{$not-mobile} {
-      @each $number in $grid-blocks {
-        .#{nth($numbers, $number) + '-up-ipad'} {
-          @include _grid-blocks($number);
-          // ipad grid blocks nth clearfix
-          &:not(:nth-child(#{$number}n+1)) {
-            clear: none !important;
-          }
-          &:nth-child(#{$number}n+1) {
-            clear: both !important;
-          }
-        }
-      }
-    }
-    // small-tablet grid blocks
-    @media #{$small-tablet} and #{$not-mobile} {
-      @each $number in $grid-blocks {
-        .#{nth($numbers, $number) + '-up-small-tablet'} {
-          @include _grid-blocks($number);
-          // small-tablet grid blocks nth clearfix
-          &:not(:nth-child(#{$number}n+1)) {
-            clear: none !important;
-          }
-          &:nth-child(#{$number}n+1) {
-            clear: both !important;
-          }
-        }
-      }
-    }
-    // mobile grid blocks
-    @media #{$mobile} {
-      @each $number in $grid-blocks {
-        .#{nth($numbers, $number) + '-up-mobile'} {
-          @include _grid-blocks($number);
-          // mobile grid blocks nth clearfix
-          &:not(:nth-child(#{$number}n+1)) {
-            clear: none !important;
-          }
-          &:nth-child(#{$number + 1}) {
-            clear: both !important;
-          }
-        }
-      }
-    }
-  }
-}
+@include output() {
 
+  $grid-selector-types: "%";
+  @if $grid-classes {
+    .container          { @extend %container; }
+    .row                { @extend %row;
+      &.guttered {
+        @extend %guttered;
+        > * {
+          @extend %guttered;
+        }
+      }
+    }
+    .column             { @extend %column; }
+    .centered           { @extend %centered-column; }
+    $grid-selector-types: "%" ".";
+  }
+
+  // generate grid selectors
+  @each $selector in $grid-selector-types {
+    @each $denominator in $grid-columns {
+      @for $numerator from 1 through $denominator - 1 {
+        $grid-selector: '';
+        @if $numerator == 1 {
+          $grid-selector: #{$selector + nth($numbers, $numerator) + '-' + nth($fractions-singular, $denominator)};
+        }@else{
+          $grid-selector: #{$selector + nth($numbers, $numerator) + '-' + nth($fractions-plural, $denominator)};
+        }
+        #{$grid-selector} {
+          @extend %column;
+          width: percentage($numerator / $denominator);
+          @for $num from 1 through $denominator - $numerator {
+            &#{$selector + 'right-' + nth($numbers, $num)} {
+              left: percentage($num / $denominator);
+            }
+            &#{$selector + 'left-' + nth($numbers, $num)} {
+              right: percentage($num / $denominator);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // generate responsive grid selectors
+  @if $responsive and $grid-classes {
+    // desktop grid selectors
+    @media #{$desktop} {
+      @include grid-selectors('desktop');
+    }
+    // ipad grid selectors
+    @media #{$not-desktop} {
+      @include grid-collapse("ipad");
+    }
+    @media #{$ipad} {
+      @include grid-selectors('ipad');
+    }
+    // small tablet grid selectors
+    @media #{$small-tablet} {
+      @include grid-collapse("small-tablet");
+      @include grid-selectors('small-tablet');
+    }
+    // mobile grid selectors
+    @media #{$mobile} {
+      @include grid-collapse("mobile");
+      @include grid-selectors('mobile');
+    }
+  }
+
+  // generate grid block selectors
+  @if $grid-block-classes {
+    @each $number in $grid-blocks {
+      .#{nth($numbers, $number) + '-up'} {
+        @include _grid-blocks($number);
+        // grid blocks nth clearfix
+        &:nth-child(#{$number}n+1) {
+          clear: both !important;
+        }
+      }
+    }
+    @if $responsive {
+      // desktop grid blocks
+      @media #{$desktop} {
+        @each $number in $grid-blocks {
+          .#{nth($numbers, $number) + '-up-desktop'} {
+            @include _grid-blocks($number);
+            // desktop grid blocks nth clearfix
+            &:nth-child(#{$number}n+1) {
+              clear: both !important;
+            }
+          }
+        }
+      }
+      // ipad grid blocks
+      @media #{$ipad} and #{$tablet} and #{$not-mobile} {
+        @each $number in $grid-blocks {
+          .#{nth($numbers, $number) + '-up-ipad'} {
+            @include _grid-blocks($number);
+            // ipad grid blocks nth clearfix
+            &:not(:nth-child(#{$number}n+1)) {
+              clear: none !important;
+            }
+            &:nth-child(#{$number}n+1) {
+              clear: both !important;
+            }
+          }
+        }
+      }
+      // small-tablet grid blocks
+      @media #{$small-tablet} and #{$not-mobile} {
+        @each $number in $grid-blocks {
+          .#{nth($numbers, $number) + '-up-small-tablet'} {
+            @include _grid-blocks($number);
+            // small-tablet grid blocks nth clearfix
+            &:not(:nth-child(#{$number}n+1)) {
+              clear: none !important;
+            }
+            &:nth-child(#{$number}n+1) {
+              clear: both !important;
+            }
+          }
+        }
+      }
+      // mobile grid blocks
+      @media #{$mobile} {
+        @each $number in $grid-blocks {
+          .#{nth($numbers, $number) + '-up-mobile'} {
+            @include _grid-blocks($number);
+            // mobile grid blocks nth clearfix
+            &:not(:nth-child(#{$number}n+1)) {
+              clear: none !important;
+            }
+            &:nth-child(#{$number + 1}) {
+              clear: both !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

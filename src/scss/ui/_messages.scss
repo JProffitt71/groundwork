@@ -124,20 +124,23 @@
   }
 }
 
-$message-selectors: '';
+@include output() {
 
-@if $ui-classes {
-  $message-selectors: ".message";
-}
-@if $aria-selectors {
+  $message-selectors: '';
+
   @if $ui-classes {
-    $message-selectors: #{$message-selectors + ", "};
+    $message-selectors: ".message";
   }
-  $message-selectors: #{$message-selectors + '[role~="alert"], [role~="status"]'};
-}
+  @if $aria-selectors {
+    @if $ui-classes {
+      $message-selectors: #{$message-selectors + ", "};
+    }
+    $message-selectors: #{$message-selectors + '[role~="alert"], [role~="status"]'};
+  }
 
-#{$message-selectors} {
-  @extend %message;
-  @include message-modifiers;
-}
+  #{$message-selectors} {
+    @extend %message;
+    @include message-modifiers;
+  }
 
+}

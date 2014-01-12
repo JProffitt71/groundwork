@@ -21,16 +21,20 @@ $spin-helpers:        "spin" "spin-once" "spin-twice" "spin-thrice"
 %spin-slow-twice  { @include _spin-slow-twice; }
 %spin-slow-thrice { @include _spin-slow-thrice; }
 
-@if $spin-animations {
+@include output() {
 
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(359deg); }
-  }
+  @if $spin-animations {
 
-  @for $i from 1 through length($spin-helpers) {
-    .#{nth($spin-helpers, $i)} {
-      @extend %#{nth($spin-helpers, $i)};
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(359deg); }
+    }
+
+    @for $i from 1 through length($spin-helpers) {
+      .#{nth($spin-helpers, $i)} {
+        @extend %#{nth($spin-helpers, $i)};
+      }
     }
   }
+
 }

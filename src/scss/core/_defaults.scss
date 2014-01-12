@@ -9,7 +9,7 @@ $root_path:                   "../" !default;      // path to HTML document root
 $images_path:                 "images/" !default;  // path to images (relative from $root_path)
 $fonts_path:                  "fonts/" !default;    // path to fonts (relative from $root_path)
 $responsive:                  true !default;
-
+$silent:                      false !default;
 
 // variables
 @import "constants";

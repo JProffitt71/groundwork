@@ -103,258 +103,261 @@
   }
 }
 
-@if $navigation-classes {
-  .no-js {
-    .nav {
-      ul {
-        li {
-          &:hover, &:focus {
-            > ul {
-              display: block;
+@include output() {
+
+  @if $navigation-classes {
+    .no-js {
+      .nav {
+        ul {
+          li {
+            &:hover, &:focus {
+              > ul {
+                display: block;
+              }
             }
           }
         }
       }
     }
-  }
-  .nav {
-    @extend %navigation;
+    .nav {
+      @extend %navigation;
 
-    button.hamburger {
-      @extend %hamburger-button;
-    }
+      button.hamburger {
+        @extend %hamburger-button;
+      }
 
-    // modifier colors
-    @for $i from 1 through length($modifier-name) {
-      &.#{nth($modifier-name, $i)} {
-        @extend %navigation-#{nth($modifier-name, $i)};
-        button.hamburger {
-          color: #{nth($modifier-text, $i)}
+      // modifier colors
+      @for $i from 1 through length($modifier-name) {
+        &.#{nth($modifier-name, $i)} {
+          @extend %navigation-#{nth($modifier-name, $i)};
+          button.hamburger {
+            color: #{nth($modifier-text, $i)}
+          }
+          li[role="menu"] {
+            ul {
+              @extend %navigation-menu-#{nth($modifier-name, $i)};
+              a, button {
+                @extend %navigation-link-#{nth($modifier-name, $i)};
+              }
+            }
+            &[aria-expanded="true"] {
+              > a, > button {
+                background: darken(nth($modifier-code, $i), 5%);
+                border-color: darken(nth($modifier-code, $i), 10%);
+                color: nth($modifier-text, $i)
+              }
+            }
+          }
+          a, button {
+            @extend %navigation-link-#{nth($modifier-name, $i)};
+          }
         }
-        li[role="menu"] {
-          ul {
-            @extend %navigation-menu-#{nth($modifier-name, $i)};
+      }
+
+      &.vertical {
+        > ul {
+          > li:first-child {
+            > a, > button {
+              border-top-width: 0;
+            }
+          }
+          > li {
+            > a, > button {
+              border-top-width: $border-thickness;
+            }
+          }
+        }
+        li {
+          li {
             a, button {
-              @extend %navigation-link-#{nth($modifier-name, $i)};
+              padding-left: 1.5em;
+            }
+            li {
+              a, button {
+                padding-left: 2em;
+              }
+              li {
+                a, button {
+                  padding-left: 2.5em;
+                }
+                li {
+                  a, button {
+                    padding-left: 3em;
+                  }
+                }
+              }
+            }
+          }
+          @extend %vertical-navigation-list-item;
+          &[role="menu"] {
+            > a, > button {
+              &:after {
+                content: $fa-var-caret-down;
+              }
+            }
+            &[aria-pressed="true"] {
+              > a, > button {
+                &:after {
+                  content: $fa-var-caret-up;
+                }
+              }
+            }
+          }
+          ul {
+            @extend %vertical-navigation-menu;
+            li {
+            }
+          }
+          li {
+            border-radius: 0;
+            &:last-child {
+              a, button {
+                border-radius: 0;
+              }
+            }
+            ul {
+              li {
+                &:first-child {
+                  a, button {
+                    border-radius: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+        a, button:not(.hamburger) {
+          @extend %vertical-navigation-link;
+        }
+      }
+
+      ul {
+        @extend %navigation-list;
+      }
+
+      li {
+        @extend %navigation-list-item;
+
+        &[role="menu"] {
+          > a, > button {
+            &:after {
+              @extend %pull-right;
+              @include icon($fa-var-caret-down);
+              margin-left: 0.5em;
             }
           }
           &[aria-expanded="true"] {
             > a, > button {
-              background: darken(nth($modifier-code, $i), 5%);
-              border-color: darken(nth($modifier-code, $i), 10%);
-              color: nth($modifier-text, $i)
+              @extend %navigation-link-active;
             }
           }
         }
-        a, button {
-          @extend %navigation-link-#{nth($modifier-name, $i)};
+
+        ul {
+          @extend %navigation-menu;
+          > li {
+            &:first-child {
+              > a, > button {
+                border-top-width: 0;
+              }
+            }
+          }
+          a, button {
+            @extend %align-left;
+            display: block;
+            width: 100%;
+          }
+        }
+
+        li {
+          float: none;
+          &:last-child {
+            > {
+              a, button {
+                border-radius: 0 0 $default-radius $default-radius;
+              }
+            }
+          }
+
+          &[role="menu"] {
+            > a, > button {
+              &:after {
+                content: $fa-var-caret-right;
+              }
+            }
+          }
+
+          ul {
+            top: 0;
+            left: 100%;
+            min-width: none;
+            border-radius: 0 $default-radius $default-radius $default-radius;
+
+            li {
+              &:first-child {
+                > {
+                  a, button {
+                    border-radius: 0 $default-radius 0 0;
+                  }
+                }
+              }
+              &:last-child {
+                > {
+                  a, button {
+                    border-radius: 0 0 $default-radius $default-radius;
+                  }
+                }
+              }
+            }
+          }
         }
       }
-    }
+      ul[aria-expanded="true"] {
+        display: block;
+      }
 
-    &.vertical {
+      a, a:visited, button {
+        @extend %navigation-link;
+        @for $i from 1 through length($navigation-states) {
+          &.#{nth($navigation-states, $i)} {
+            @extend %navigation-link-#{nth($navigation-states, $i)};
+          }
+        }
+      }
       > ul {
-        > li:first-child {
+        > li {
           > a, > button {
             border-top-width: 0;
           }
-        }
-        > li {
-          > a, > button {
-            border-top-width: $border-thickness;
-          }
-        }
-      }
-      li {
-        li {
-          a, button {
-            padding-left: 1.5em;
-          }
-          li {
-            a, button {
-              padding-left: 2em;
-            }
-            li {
-              a, button {
-                padding-left: 2.5em;
-              }
-              li {
-                a, button {
-                  padding-left: 3em;
-                }
-              }
-            }
-          }
-        }
-        @extend %vertical-navigation-list-item;
-        &[role="menu"] {
-          > a, > button {
-            &:after {
-              content: $fa-var-caret-down;
-            }
-          }
-          &[aria-pressed="true"] {
-            > a, > button {
-              &:after {
-                content: $fa-var-caret-up;
-              }
-            }
-          }
-        }
-        ul {
-          @extend %vertical-navigation-menu;
-          li {
-          }
-        }
-        li {
-          border-radius: 0;
-          &:last-child {
-            a, button {
-              border-radius: 0;
-            }
-          }
-          ul {
-            li {
-              &:first-child {
-                a, button {
-                  border-radius: 0;
-                }
-              }
-            }
-          }
-        }
-      }
-      a, button:not(.hamburger) {
-        @extend %vertical-navigation-link;
-      }
-    }
-
-    ul {
-      @extend %navigation-list;
-    }
-
-    li {
-      @extend %navigation-list-item;
-
-      &[role="menu"] {
-        > a, > button {
-          &:after {
-            @extend %pull-right;
-            @include icon($fa-var-caret-down);
-            margin-left: 0.5em;
-          }
-        }
-        &[aria-expanded="true"] {
-          > a, > button {
-            @extend %navigation-link-active;
-          }
-        }
-      }
-
-      ul {
-        @extend %navigation-menu;
-        > li {
           &:first-child {
             > a, > button {
               border-top-width: 0;
             }
           }
         }
-        a, button {
-          @extend %align-left;
-          display: block;
-          width: 100%;
-        }
-      }
-
-      li {
-        float: none;
-        &:last-child {
-          > {
-            a, button {
-              border-radius: 0 0 $default-radius $default-radius;
-            }
-          }
-        }
-
-        &[role="menu"] {
-          > a, > button {
-            &:after {
-              content: $fa-var-caret-right;
-            }
-          }
-        }
-
-        ul {
-          top: 0;
-          left: 100%;
-          min-width: none;
-          border-radius: 0 $default-radius $default-radius $default-radius;
-
-          li {
-            &:first-child {
-              > {
-                a, button {
-                  border-radius: 0 $default-radius 0 0;
-                }
-              }
-            }
-            &:last-child {
-              > {
-                a, button {
-                  border-radius: 0 0 $default-radius $default-radius;
-                }
-              }
-            }
-          }
-        }
       }
     }
-    ul[aria-expanded="true"] {
-      display: block;
-    }
 
-    a, a:visited, button {
-      @extend %navigation-link;
-      @for $i from 1 through length($navigation-states) {
-        &.#{nth($navigation-states, $i)} {
-          @extend %navigation-link-#{nth($navigation-states, $i)};
-        }
+    @if $responsive {
+      // ipad hamburger mode
+      @media #{$ipad} {
+        @include hamburger-mode(":not(.small-tablet):not(.mobile)");
       }
-    }
-    > ul {
-      > li {
-        > a, > button {
-          border-top-width: 0;
-        }
-        &:first-child {
-          > a, > button {
-            border-top-width: 0;
-          }
-        }
+      // small tablet hamburger mode
+      @media #{$small-tablet} {
+        @include hamburger-mode(":not(.mobile)");
+      }
+      // mobile hamburger mode
+      @media #{$mobile} {
+        @include hamburger-mode();
       }
     }
   }
 
-  @if $responsive {
-    // ipad hamburger mode
-    @media #{$ipad} {
-      @include hamburger-mode(":not(.small-tablet):not(.mobile)");
-    }
-    // small tablet hamburger mode
-    @media #{$small-tablet} {
-      @include hamburger-mode(":not(.mobile)");
-    }
-    // mobile hamburger mode
-    @media #{$mobile} {
-      @include hamburger-mode();
+  @if $aria-selectors {
+    [role~="navigation"] {
+      @extend %navigation;
     }
   }
+
 }
-
-@if $aria-selectors {
-  [role~="navigation"] {
-    @extend %navigation;
-  }
-}
-

@@ -6,18 +6,21 @@
 @charset "UTF-8";
 $dismiss-animation: "fadeOut" !default;
 
+@include output() {
 
-body {
-  -webkit-transform: translateZ(0); // Addresses webkit issue: http://bit.ly/NEdoDq
-}
+	body {
+	  -webkit-transform: translateZ(0); // Addresses webkit issue: http://bit.ly/NEdoDq
+	}
 
-.animated {
-  animation-duration: 1s;
-  animation-fill-mode: both;
-}
+	.animated {
+	  animation-duration: 1s;
+	  animation-fill-mode: both;
+	}
 
-.dismiss {
-  @extend .#{$dismiss-animation};
+	.dismiss {
+	  @extend .#{$dismiss-animation};
+	}
+
 }
 
 @import "bounce";

@@ -27,18 +27,21 @@
   border: none;
 }
 
-@if $global-tags {
-  $elements: html hr img;
-  @for $i from 1 through length($elements) {
-    #{nth($elements, $i)} {
-      @extend %#{nth($elements, $i)};
+@include output() {
+
+  @if $global-tags {
+    $elements: html hr img;
+    @for $i from 1 through length($elements) {
+      #{nth($elements, $i)} {
+        @extend %#{nth($elements, $i)};
+      }
+    }
+    html, body {
+      @extend %document;
+    }
+    a img {
+      @extend %img;
     }
   }
-  html, body {
-    @extend %document;
-  }
-  a img {
-    @extend %img;
-  }
-}
 
+}
